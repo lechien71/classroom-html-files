@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLスライドプレゼンテーション</title>
+    
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    
+    <!-- カスタムCSS -->
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 {
+            color: #2c3e50;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            margin: 20px auto;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .image-container img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .highlight {
+            background-color: #e8f4fd;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- スライド1: タイトルページ -->
+            <section>
+                <h1>データ分析レポート</h1>
+                <h3>HTMLスライドプレゼンテーション</h3>
+                <div class="image-container">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23f8f9fa'/%3E%3Ctext x='200' y='100' text-anchor='middle' dy='.3em' fill='%23495057' font-size='24' font-family='Arial'%3Eタイトル画像%3C/text%3E%3C/svg%3E" alt="タイトル画像">
+                </div>
+                <p><small>作成日: 2024年12月</small></p>
+            </section>
+
+            <!-- スライド2: 概要 -->
+            <section>
+                <h2>プレゼンテーション概要</h2>
+                <div class="highlight">
+                    <p>このスライドでは、HTMLとJavaScriptを活用した動的なプレゼンテーションの作成方法をご紹介します。</p>
+                </div>
+                <ul>
+                    <li>インタラクティブなグラフの表示</li>
+                    <li>画像の効果的な配置</li>
+                    <li>アニメーション効果の活用</li>
+                    <li>データの視覚化技術</li>
+                </ul>
+            </section>
+
+            <!-- スライド3: 統計データ -->
+            <section>
+                <h2>主要統計データ</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">85%</div>
+                        <p>ユーザー満足度</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1,250</div>
+                        <p>月間アクティブユーザー</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">42%</div>
+                        <p>成長率（前年比）</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- スライド4: 棒グラフ -->
+            <section>
+                <h2>月別売上データ</h2>
+                <div class="chart-container">
+                    <canvas id="barChart"></canvas>
+                </div>
+                <p><small>※ 2024年1月〜6月のデータ</small></p>
+            </section>
+
+            <!-- スライド5: 円グラフ -->
+            <section>
+                <h2>製品カテゴリ別シェア</h2>
+                <div class="chart-container">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </section>
+
+            <!-- スライド6: 画像とテキストの組み合わせ -->
+            <section>
+                <h2>プロダクト紹介</h2>
+                <div style="display: flex; align-items: center; gap: 30px;">
+                    <div style="flex: 1;">
+                        <div class="image-container">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e3f2fd'/%3E%3Ccircle cx='150' cy='100' r='50' fill='%232196f3'/%3E%3Ctext x='150' y='160' text-anchor='middle' fill='%23424242' font-size='14'%3Eプロダクト画像%3C/text%3E%3C/svg%3E" alt="プロダクト画像">
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3>主な特徴</h3>
+                        <ul>
+                            <li>高性能な処理能力</li>
+                            <li>直感的なユーザーインターフェース</li>
+                            <li>クラウド連携機能</li>
+                            <li>24時間サポート体制</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- スライド7: 折れ線グラフ -->
+            <section>
+                <h2>成長トレンド分析</h2>
+                <div class="chart-container">
+                    <canvas id="lineChart"></canvas>
+                </div>
+                <div class="highlight">
+                    <p>過去6ヶ月間で着実な成長を記録しています</p>
+                </div>
+            </section>
+
+            <!-- スライド8: まとめ -->
+            <section>
+                <h2>まとめ</h2>
+                <div class="image-container">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='150' viewBox='0 0 400 150'%3E%3Crect width='400' height='150' fill='%23f1f8e9'/%3E%3Ctext x='200' y='75' text-anchor='middle' dy='.3em' fill='%232e7d32' font-size='20' font-family='Arial'%3E成功への道のり%3C/text%3E%3C/svg%3E" alt="まとめ画像">
+                </div>
+                <ul>
+                    <li>データに基づいた意思決定の重要性</li>
+                    <li>継続的な改善とイノベーション</li>
+                    <li>チーム連携の強化</li>
+                    <li>次期計画の策定</li>
+                </ul>
+            </section>
+
+            <!-- スライド9: Q&A -->
+            <section>
+                <h1>ご質問・ご相談</h1>
+                <div class="image-container">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23fff3e0'/%3E%3Ctext x='150' y='80' text-anchor='middle' fill='%23f57f17' font-size='60'%3E%3F%3C/text%3E%3Ctext x='150' y='140' text-anchor='middle' fill='%23424242' font-size='16'%3EQ%26A%3C/text%3E%3C/svg%3E" alt="質問画像">
+                </div>
+                <p>お気軽にご質問ください</p>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Reveal.js 初期化
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade'
+        });
+
+        // グラフの作成
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 棒グラフ
+            const barCtx = document.getElementById('barChart');
+            if (barCtx) {
+                new Chart(barCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                        datasets: [{
+                            label: '売上高（万円）',
+                            data: [120, 135, 155, 142, 168, 185],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.8)',
+                                'rgba(255, 99, 132, 0.8)',
+                                'rgba(255, 205, 86, 0.8)',
+                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(153, 102, 255, 0.8)',
+                                'rgba(255, 159, 64, 0.8)'
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 205, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: '売上高（万円）'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            }
+                        }
+                    }
+                });
+            }
+
+            // 円グラフ
+            const pieCtx = document.getElementById('pieChart');
+            if (pieCtx) {
+                new Chart(pieCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['製品A', '製品B', '製品C', '製品D', 'その他'],
+                        datasets: [{
+                            data: [35, 25, 20, 12, 8],
+                            backgroundColor: [
+                                '#FF6384',
+                                '#36A2EB',
+                                '#FFCE56',
+                                '#4BC0C0',
+                                '#9966FF'
+                            ],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'right'
+                            }
+                        }
+                    }
+                });
+            }
+
+            // 折れ線グラフ
+            const lineCtx = document.getElementById('lineChart');
+            if (lineCtx) {
+                new Chart(lineCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                        datasets: [{
+                            label: 'ユーザー数',
+                            data: [850, 920, 1050, 1180, 1220, 1350],
+                            borderColor: 'rgb(75, 192, 192)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.4,
+                            fill: true
+                        }, {
+                            label: 'セッション数',
+                            data: [1200, 1380, 1520, 1680, 1750, 1920],
+                            borderColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: '数値'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        // スライド変更時のアニメーション
+        Reveal.addEventListener('slidechanged', function(event) {
+            // グラフのアニメーションを再実行
+            const charts = Chart.instances;
+            Object.values(charts).forEach(chart => {
+                if (chart && typeof chart.update === 'function') {
+                    chart.update('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
