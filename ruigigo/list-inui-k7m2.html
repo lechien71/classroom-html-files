@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>教材一覧(教員用)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+<script>
+  // ===== 教材データ =====
+  // 1行足すと一覧に増えます。url は相対パス(同じフォルダのファイル名)でも https:// から始まるURLでも可。
+  const ITEMS = [
+    { ko: 'Ⅱ-ㄹ게요 / Ⅱ-ㄹ 거예요', ja: '約束・申し出か、予定か(제가 할게요/할 거예요)', date: '2026-10-17', url: 'g01-rgeyo.html' },
+    { ko: '살던 / 살았던 / 산',       ja: '回想の連体形(Ⅰ-던・Ⅲ-ㅆ던・Ⅱ-ㄴ)',          date: '2026-10-17', url: 'g02-deon.html' },
+    { ko: '관형사형(連体形)',          ja: '韓国語の連体形(音声つき)',                   date: '',           url: 'https://storied-blini-73fed5.netlify.app/' },
+  ];
+</script>
+<style>
+  :root {
+    --bg: #faf8f4; --card: #ffffff; --ink: #2b2b2b; --sub: #6b655e;
+    --line: #e6dfd3; --band: #222222; --accent: #2a64a8; --ok: #2b8152;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 16px; line-height: 1.7;
+  }
+  .ko { font-family: "Noto Sans KR", "Malgun Gothic", sans-serif; font-weight: 700; font-size: 1.05em; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+  header { background: var(--band); color: #fff; padding: 22px 0 18px; }
+  header h1 { margin: 0; font-size: 1.3rem; }
+  header p { margin: 4px 0 0; font-size: .85rem; color: #cfc9c0; }
+  .search { margin: 20px 0 12px; }
+  .search input {
+    width: 100%; font: inherit; padding: 10px 14px;
+    border: 1px solid var(--line); border-radius: 10px; background: #fff;
+  }
+  .count { font-size: .85rem; color: var(--sub); margin: 0 0 8px; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+  th { background: #f3efe8; font-size: .9rem; }
+  td.date { white-space: nowrap; color: var(--sub); font-size: .9rem; }
+  a.open { color: var(--accent); font-weight: 700; white-space: nowrap; }
+  button.copy {
+    font: inherit; font-size: .85rem; padding: 4px 12px; border-radius: 999px;
+    border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; white-space: nowrap;
+  }
+  button.copy.done { border-color: var(--ok); color: var(--ok); }
+  .empty { text-align: center; color: var(--sub); padding: 20px; }
+  footer { color: var(--sub); font-size: .8rem; text-align: center; padding: 24px 0 40px; }
+
+  /* スマホでは1件ずつカード表示 */
+  @media (max-width: 640px) {
+    table, tbody, tr, td { display: block; width: 100%; }
+    thead { display: none; }
+    table { border: none; background: none; }
+    tr { background: var(--card); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 12px; padding: 6px 0; }
+    td { border: none; padding: 4px 14px; }
+    td.actions { display: flex; gap: 12px; align-items: center; padding-top: 8px; padding-bottom: 8px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>教材一覧(教員用)</h1>
+    <p>学生には共有しないページです。</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="search"><input id="q" type="search" placeholder="検索(韓国語・日本語・日付)" autocomplete="off"></div>
+  <p class="count" id="count"></p>
+  <table>
+    <thead><tr><th>語</th><th>日本語</th><th>作成日</th><th></th></tr></thead>
+    <tbody id="list"></tbody>
+  </table>
+</main>
+<footer>データはファイル上部の ITEMS に1行足すと増えます。</footer>
+
+<script>
+  const list = document.getElementById('list');
+  const input = document.getElementById('q');
+  const countEl = document.getElementById('count');
+
+  function absUrl(u) { return new URL(u, location.href).href; }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  async function copyText(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (e) {
+      // file:// などで clipboard API が使えない場合
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand('copy');
+      ta.remove();
+      return ok;
+    }
+  }
+
+  function render() {
+    const word = input.value.trim().toLowerCase();
+    const rows = ITEMS.filter(it =>
+      !word || [it.ko, it.ja, it.date, it.url].join(' ').toLowerCase().includes(word));
+    list.innerHTML = rows.length ? rows.map(it => `
+      <tr>
+        <td><span class="ko">${esc(it.ko)}</span></td>
+        <td>${esc(it.ja)}</td>
+        <td class="date">${esc(it.date || '—')}</td>
+        <td class="actions">
+          <a class="open" href="${esc(it.url)}" target="_blank" rel="noopener">開く</a>
+          <button class="copy" type="button" data-url="${esc(absUrl(it.url))}">URLをコピー</button>
+        </td>
+      </tr>`).join('') : '<tr><td class="empty" colspan="4">該当する教材がありません</td></tr>';
+    countEl.textContent = `${rows.length} / ${ITEMS.length} 件`;
+  }
+
+  list.addEventListener('click', async e => {
+    const btn = e.target.closest('button.copy');
+    if (!btn) return;
+    const ok = await copyText(btn.dataset.url);
+    btn.textContent = ok ? 'コピーしました' : 'コピーできませんでした';
+    btn.classList.toggle('done', ok);
+    setTimeout(() => { btn.textContent = 'URLをコピー'; btn.classList.remove('done'); }, 1800);
+  });
+
+  input.addEventListener('input', render);
+  render();
+</script>
+</body>
+</html>

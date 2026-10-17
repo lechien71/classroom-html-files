@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>살던・살았던・산|似ている表現の使い分け 02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== シリーズ共通デザイン(似ている表現の使い分け) ===== */
+  :root {
+    --bg: #faf8f4;
+    --card: #ffffff;
+    --ink: #2b2b2b;
+    --sub: #6b655e;
+    --line: #e6dfd3;
+    --band: #222222;
+    /* 比べる表現の色(ページごとに意味を決めて、全体でそろえる) */
+    --c1: #c9620a; --c1bg: #fdf0e2;   /* オレンジ */
+    --c2: #2a64a8; --c2bg: #e8f0fa;   /* 青 */
+    --c3: #2b8152; --c3bg: #e6f3eb;   /* 緑 */
+    --c4: #7a4bab; --c4bg: #f2ebf8;   /* 紫 */
+    --ok: #2b8152; --mid: #b07a12; --ng: #b8382c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .ko {
+    font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+    font-size: 1.12em;
+    font-weight: 500;
+  }
+  b.ko, .ko b, strong.ko { font-weight: 700; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+  header.band { background: var(--band); color: #fff; padding: 28px 0 24px; }
+  header .series { margin: 0; font-size: .85rem; color: #cfc9c0; letter-spacing: .05em; }
+  header h1 { margin: 6px 0 6px; font-size: 1.5rem; line-height: 1.5; }
+  header h1 .ko { font-size: 1.05em; font-weight: 700; }
+  header .sub { margin: 0; font-size: .9rem; color: #e4ded5; }
+  header .k1 { color: #ffa65c; } header .k2 { color: #8fbcf2; }
+  header .k3 { color: #8fd6ab; } header .k4 { color: #c9a6ee; }
+
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 18px;
+    margin: 20px 0;
+  }
+  h2 { font-size: 1.15rem; margin: 0 0 12px; line-height: 1.5; }
+  h2 .num {
+    display: inline-block; background: var(--band); color: #fff;
+    border-radius: 6px; padding: 0 8px; margin-right: 8px; font-size: .85rem;
+  }
+  h3 { font-size: 1rem; margin: 18px 0 6px; }
+  p { margin: 8px 0; }
+  .note { color: var(--sub); font-size: .9rem; }
+
+  /* 色 */
+  .k1 { color: var(--c1); } .k2 { color: var(--c2); } .k3 { color: var(--c3); } .k4 { color: var(--c4); }
+  .chip {
+    display: inline-block; border-radius: 999px; padding: 0 10px; margin: 2px 2px 2px 0;
+    color: #fff; font-weight: 700; font-size: .95em; line-height: 1.8;
+  }
+  .chip.k1 { background: var(--c1); } .chip.k2 { background: var(--c2); }
+  .chip.k3 { background: var(--c3); } .chip.k4 { background: var(--c4); }
+
+  /* 見本の文 */
+  .big { text-align: center; margin: 14px 0; }
+  .big .ko { display: block; font-size: 1.35em; font-weight: 700; }
+
+  /* ひとことで言うと */
+  .core { border-radius: 8px; padding: 12px 14px; margin: 10px 0; }
+  .core .head { font-weight: 700; }
+  .core p { margin: 4px 0 0; }
+  .b1 { background: var(--c1bg); border-left: 6px solid var(--c1); }
+  .b2 { background: var(--c2bg); border-left: 6px solid var(--c2); }
+  .b3 { background: var(--c3bg); border-left: 6px solid var(--c3); }
+  .b4 { background: var(--c4bg); border-left: 6px solid var(--c4); }
+  .extra { display: grid; gap: 8px; }
+  .extra .core { padding: 8px 12px; font-size: .95rem; }
+
+  ul.points { padding-left: 1.2em; margin: 8px 0; }
+  ul.points li { margin: 4px 0; }
+
+  /* 表 */
+  .tbl { overflow-x: auto; margin: 10px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; min-width: 460px; }
+  th, td { border: 1px solid var(--line); padding: 8px 6px; text-align: center; vertical-align: middle; }
+  th { background: #f3efe8; font-weight: 700; }
+  td.scene, th.scene { text-align: left; min-width: 9em; }
+  td .sm { display: block; font-size: .78rem; color: var(--sub); line-height: 1.4; }
+  .o { color: var(--ok); font-weight: 700; font-size: 1.15em; }
+  .t { color: var(--mid); font-weight: 700; font-size: 1.15em; }
+  .x { color: var(--ng); font-weight: 700; font-size: 1.15em; }
+  .legend { font-size: .85rem; color: var(--sub); }
+
+  /* 例文 */
+  .ex { border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 10px 0; }
+  .ex .ko { display: block; font-size: 1.2em; font-weight: 700; line-height: 1.7; }
+  .ex .ja { display: block; font-size: .95rem; margin-top: 2px; }
+  .ex .mark { font-weight: 700; margin-right: 6px; }
+  .cmpset { margin: 18px 0 22px; }
+  .cmpset > h3 { margin-top: 0; }
+
+  .judge { display: grid; gap: 8px; margin: 14px 0 18px; }
+  .judge .row { display: grid; grid-template-columns: 2em 1fr; gap: 6px; align-items: baseline; }
+  .judge .row .ko { font-size: 1.15em; font-weight: 700; }
+  .judge .row.ng .ko { color: #9a938a; }
+  .judge .why { font-size: .93rem; background: #f6f3ee; border-radius: 8px; padding: 8px 12px; }
+  .judge .scene { font-size: .9rem; color: var(--sub); }
+
+  .column { background: #f6f3ee; border-radius: 8px; padding: 12px 14px; margin-top: 16px; font-size: .95rem; }
+  .column .head { font-weight: 700; }
+
+  /* 会話 */
+  .dialog { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 14px 0; }
+  .dialog .title { font-weight: 700; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .dialog .line { display: grid; grid-template-columns: 3.6em 1fr; gap: 4px 8px; padding: 6px 0; border-top: 1px dashed var(--line); }
+  .dialog .line:first-of-type { border-top: none; }
+  .dialog .who { font-weight: 700; color: var(--sub); font-size: .9rem; padding-top: .2em; }
+  .dialog .ko { display: block; }
+  .dialog .tr { display: block; color: var(--sub); font-size: .9rem; }
+  .dialog.hide-tr .tr { visibility: hidden; }
+  .dialog .memo { font-size: .88rem; color: var(--sub); margin-top: 8px; }
+  button.small {
+    font: inherit; font-size: .8rem; padding: 2px 10px; border-radius: 999px;
+    border: 1px solid var(--line); background: #fff; color: var(--sub); cursor: pointer; white-space: nowrap;
+  }
+
+  /* 練習問題 */
+  .q { border-top: 1px dashed var(--line); padding: 14px 0; }
+  .q:first-of-type { border-top: none; }
+  .q .qtext { font-weight: 700; }
+  .q .qtext .ko { font-weight: 700; }
+  .q .scene { font-size: .9rem; color: var(--sub); display: block; font-weight: 400; }
+  .opts { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+  .opts button {
+    font-family: "Noto Sans KR", sans-serif; font-size: 1.05rem; font-weight: 700;
+    padding: 8px 16px; border-radius: 10px; border: 2px solid var(--line);
+    background: #fff; color: var(--ink); cursor: pointer; min-width: 6em;
+  }
+  .opts button:hover { border-color: #bdb4a6; }
+  .opts button.right { border-color: var(--ok); background: #e6f3eb; }
+  .opts button.wrong { border-color: var(--ng); background: #fbe9e7; }
+  .q.done .opts button { cursor: default; }
+  .fb { background: #f6f3ee; border-radius: 8px; padding: 10px 12px; margin-top: 8px; font-size: .95rem; }
+  .fb .res { font-weight: 700; display: block; }
+  .score { text-align: right; font-weight: 700; margin: 6px 0 0; }
+
+  footer { color: var(--sub); font-size: .8rem; text-align: center; padding: 8px 0 40px; }
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap">
+    <p class="series">似ている表現の使い分け 02</p>
+    <h1><span class="ko k1">살던</span> と <span class="ko k2">살았던</span> と <span class="ko k3">산</span></h1>
+    <p class="sub">どれも「住んでいた〜」。思い出し方が違う|『新・韓国語へのとびら』13A・12B</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 1. 導入 -->
+  <section>
+    <h2><span class="num">1</span>日本語なら、どれも「住んでいた町」</h2>
+    <p>子どものころの町を友達に紹介するとき、日本語なら「私が住んでいた町」の1つで済みます。韓国語では次のような言い方があります。</p>
+    <div class="big">
+      <span class="ko"><b class="k1">내가 살던 고향</b></span>
+      <span class="ko"><b class="k2">내가 살았던 고향</b></span>
+    </div>
+    <p>どちらも「私が住んでいたふるさと」です。でも、韓国語では<strong>過去の思い出し方</strong>が少し違います。さらに過去連体形の <b class="ko k3">산</b> も関係してきます。</p>
+    <p>このページでは、色を次のようにそろえています。</p>
+    <p>
+      <span class="chip k1">Ⅰ-던</span>
+      <span class="chip k2">Ⅲ-ㅆ던</span>
+      <span class="chip k3">Ⅱ-ㄴ(過去連体形)</span>
+    </p>
+  </section>
+
+  <!-- 2. ひとことで -->
+  <section>
+    <h2><span class="num">2</span>ひとことで言うと</h2>
+    <div class="core b1">
+      <span class="head"><span class="ko k1">Ⅰ-던</span> → 「(ずっと/途中まで)〜していた」</span>
+      <p>しばらく続いていたこと、途中だったことを、<strong>その場面に戻って</strong>思い出す。動画を再生するイメージ。</p>
+    </div>
+    <div class="core b2">
+      <span class="head"><span class="ko k2">Ⅲ-ㅆ던</span> → 「〜した/〜だった」</span>
+      <p><strong>もう終わったこと</strong>として振り返る。今とは切れている感じ。アルバムの写真を見るイメージ。</p>
+    </div>
+    <div class="core b3">
+      <span class="head"><span class="ko k3">Ⅱ-ㄴ</span> → 「〜した」</span>
+      <p>過去の<strong>事実</strong>をそのまま言うだけ。思い出す気持ちは弱め。</p>
+    </div>
+    <ul class="points">
+      <li><b class="ko k1">먹던 빵</b> は「食べかけのパン」。途中で止まっている感じが出ます。</li>
+      <li><b class="ko k2">먹었던 빵</b> は「(前に)食べたパン」。食べ終わったこととして思い出しています。</li>
+      <li>形容詞・指定詞の過去は <b class="ko k2">Ⅲ-ㅆ던</b> がふつうです(<span class="ko">예뻤던</span>、<span class="ko">학생이었던</span>)。</li>
+    </ul>
+  </section>
+
+  <!-- 3. 形の作り方 -->
+  <section>
+    <h2><span class="num">3</span>形の作り方(語基式)</h2>
+    <p><span class="ko k1">던</span> は<strong>第Ⅰ語基</strong>に、<span class="ko k2">ㅆ던</span> は<strong>第Ⅲ語基</strong>に、<span class="ko k3">ㄴ</span> は<strong>第Ⅱ語基</strong>に付きます。</p>
+    <div class="tbl">
+      <table>
+        <tr><th>基本形</th><th class="k1">Ⅰ-던</th><th class="k2">Ⅲ-ㅆ던</th><th class="k3">Ⅱ-ㄴ</th></tr>
+        <tr><td><span class="ko">살다</span><span class="sm">ㄹ語幹 Ⅲ 살아-</span></td><td class="ko">살던</td><td class="ko">살았던</td><td class="ko">산</td></tr>
+        <tr><td><span class="ko">먹다</span><span class="sm">Ⅱ 먹으- / Ⅲ 먹어-</span></td><td class="ko">먹던</td><td class="ko">먹었던</td><td class="ko">먹은</td></tr>
+        <tr><td><span class="ko">가다</span><span class="sm">Ⅱ 가- / Ⅲ 가-</span></td><td class="ko">가던</td><td class="ko">갔던</td><td class="ko">간</td></tr>
+        <tr><td><span class="ko">하다</span><span class="sm">Ⅲ 해-</span></td><td class="ko">하던</td><td class="ko">했던</td><td class="ko">한</td></tr>
+        <tr><td><span class="ko">듣다</span><span class="sm">ㄷ変則 Ⅱ 들으- / Ⅲ 들어-</span></td><td class="ko">듣던</td><td class="ko">들었던</td><td class="ko">들은</td></tr>
+        <tr><td><span class="ko">예쁘다</span><span class="sm">形容詞 Ⅲ 예뻐-</span></td><td class="ko">(예쁘던)</td><td class="ko">예뻤던</td><td><span class="ko">예쁜</span><span class="sm">※現在「きれいな」</span></td></tr>
+        <tr><td><span class="ko">학생이다</span><span class="sm">指定詞 Ⅲ 학생이어-</span></td><td class="ko">(학생이던)</td><td class="ko">학생이었던</td><td><span class="ko">학생인</span><span class="sm">※現在「学生である」</span></td></tr>
+      </table>
+    </div>
+    <ul class="points note">
+      <li><span class="ko">살다</span> はㄹ語幹なので、第Ⅱ語基に <span class="ko">ㄴ</span> が付くと ㄹ が落ちて <span class="ko">산</span> になります。</li>
+      <li>形容詞・指定詞の <span class="ko k3">Ⅱ-ㄴ</span> は<strong>現在</strong>の意味です。過去を言うときは <span class="ko k2">Ⅲ-ㅆ던</span> を使います。( )の <span class="ko k1">Ⅰ-던</span> の形もありますが、会話ではあまり使いません。</li>
+      <li>母音で終わる名詞の指定詞は縮まって <span class="ko">친구였던</span>(友達だった)のようになります。</li>
+    </ul>
+  </section>
+
+  <!-- 4. 比較表 -->
+  <section>
+    <h2><span class="num">4</span>どんな場面で使う?</h2>
+    <div class="tbl">
+      <table>
+        <tr><th class="scene">場面</th><th class="k1 ko">살던</th><th class="k2 ko">살았던</th><th class="k3 ko">산</th></tr>
+        <tr><td class="scene">しばらく続けていたこと・習慣を思い出す</td><td class="o">○</td><td class="o">○</td><td class="t">△</td></tr>
+        <tr><td class="scene">途中で止まったこと(食べかけ・読みかけ)</td><td class="o">○</td><td class="x">×</td><td class="x">×</td></tr>
+        <tr><td class="scene">1回で終わった出来事</td><td class="x">×</td><td class="o">○</td><td class="o">○</td></tr>
+        <tr><td class="scene">「今はもう違う」とはっきり言いたい</td><td class="t">△</td><td class="o">○</td><td class="t">△</td></tr>
+        <tr><td class="scene">過去の事実をそのまま言う</td><td class="x">×</td><td class="t">△</td><td class="o">○</td></tr>
+        <tr><td class="scene">形容詞・指定詞の過去<span class="sm">예뻤던・학생이었던</span></td><td class="t">△<span class="sm">書き言葉的</span></td><td class="o">○</td><td class="x">×<span class="sm">現在の意味</span></td></tr>
+      </table>
+    </div>
+    <p class="legend"><span class="o">○</span> 自然 <span class="t">△</span> 場面によっては使える・少し不自然 <span class="x">×</span> 使わない</p>
+  </section>
+
+  <!-- 5. 同じ文で比べる -->
+  <section>
+    <h2><span class="num">5</span>同じ文で比べてみよう</h2>
+
+    <div class="cmpset">
+      <h3>① ふるさとの写真を見せながら</h3>
+      <div class="ex b1"><span class="ko">여기가 제가 <span class="k1">살던</span> 고향이에요.</span>
+        <span class="ja">そこで毎日を過ごしていたころの景色が、ふっとよみがえるような言い方です。思い出の中に入っていく感じがあります。</span></div>
+      <div class="ex b2"><span class="ko">여기가 제가 <span class="k2">살았던</span> 고향이에요.</span>
+        <span class="ja">「前に住んでいたふるさと」と、もう終わった過去として振り返っています。「今はもう住んでいない」ことがはっきり伝わります。</span></div>
+      <p class="note">会話ではどちらもよく使い、違いはわずかです。迷ったら <span class="ko k2">살았던</span> を使うと安心です。童謡「故郷の春」の歌い出し <span class="ko">나의 살던 고향은</span>(私の住んでいたふるさとは)も <span class="ko k1">던</span> です。</p>
+    </div>
+
+    <div class="cmpset">
+      <h3>② 机の上のパンを指さして</h3>
+      <div class="ex b1"><span class="ko">이거 제가 <span class="k1">먹던</span> 빵이에요.</span>
+        <span class="ja">「これ、私の食べかけのパンです(食べないでね)」。食べている途中で止まっています。</span></div>
+      <div class="ex b2"><span class="ko">이거 지난번에 <span class="k2">먹었던</span> 빵이에요.</span>
+        <span class="ja">「あ、これ、この前食べたパンだ!」。食べ終わった出来事として、そのときを思い出しています。</span></div>
+      <div class="ex b3"><span class="ko">이거 지난번에 <span class="k3">먹은</span> 빵이에요.</span>
+        <span class="ja">「これ、この前食べたパンです」。食べたという事実を伝えるだけで、思い出す気持ちは弱めです。</span></div>
+      <p class="note">実際の会話では <span class="ko">아까 먹었던 빵</span>(さっき食べたパン)のように、<span class="ko k3">먹은</span> の代わりに <span class="ko k2">먹었던</span> を使う人がとても多いです。どちらも自然です。</p>
+    </div>
+
+    <div class="cmpset">
+      <h3>③ 大学時代の話をしていて</h3>
+      <div class="ex b1"><span class="ko">대학 때 자주 <span class="k1">가던</span> 카페가 없어졌어요.</span>
+        <span class="ja">「よく通っていたカフェ」。通い続けていたころの日常が目に浮かびます。</span></div>
+      <div class="ex b2"><span class="ko">대학 때 자주 <span class="k2">갔던</span> 카페가 없어졌어요.</span>
+        <span class="ja">「よく行ったカフェ」。大学時代を「もう終わった時期」として振り返っています。意味はほとんど同じです。</span></div>
+    </div>
+  </section>
+
+  <!-- 6. 片方だけが自然 -->
+  <section>
+    <h2><span class="num">6</span>片方だけが自然な例</h2>
+
+    <div class="judge">
+      <span class="scene">飲みかけのコーヒーがなくなっていて</span>
+      <div class="row"><span class="o">○</span><span class="ko">어? 제가 <span class="k1">마시던</span> 커피 어디 갔어요?</span></div>
+      <div class="row ng"><span class="x">×</span><span class="ko">어? 제가 마신 커피 어디 갔어요?</span></div>
+      <div class="why">「飲みかけ」を表せるのは <span class="ko k1">Ⅰ-던</span> だけです。<span class="ko k3">마신</span> だと「飲み終わったコーヒー」になり、場面に合いません。</div>
+    </div>
+
+    <div class="judge">
+      <div class="row"><span class="o">○</span><span class="ko">어제 처음 <span class="k3">만난</span> 사람이에요.</span></div>
+      <div class="row ng"><span class="x">×</span><span class="ko">어제 처음 만나던 사람이에요.</span></div>
+      <div class="why">「初めて会った」は1回で終わった出来事です。続いていたことを表す <span class="ko k1">Ⅰ-던</span> は合いません。</div>
+    </div>
+
+    <div class="judge">
+      <div class="row"><span class="o">○</span><span class="ko">어렸을 때 진짜 <span class="k2">작았던</span> 우리 강아지</span></div>
+      <div class="row ng"><span class="x">×</span><span class="ko">어렸을 때 진짜 작은 우리 강아지</span></div>
+      <div class="why">形容詞の <span class="ko k3">작은</span> は「(今)小さい」という現在の意味です。「小さかった」と過去を言うには <span class="ko k2">작았던</span> を使います。</div>
+    </div>
+
+    <div class="judge">
+      <div class="row"><span class="o">○</span><span class="ko">고등학교 때 반장<span class="k2">이었던</span> 친구</span></div>
+      <div class="row ng"><span class="t">△</span><span class="ko">고등학교 때 반장이던 친구</span></div>
+      <div class="why">指定詞の過去も <span class="ko k2">Ⅲ-ㅆ던</span> がふつうです。<span class="ko k1">이던</span> も間違いではありませんが、会話ではあまり聞きません。</div>
+    </div>
+
+    <div class="judge">
+      <span class="scene">子どものころ住んでいた家を見せて</span>
+      <div class="row"><span class="o">○</span><span class="ko">여기가 제가 어릴 때 <span class="k1">살던</span> 집이에요.</span></div>
+      <div class="row ng"><span class="t">△</span><span class="ko">여기가 제가 어릴 때 산 집이에요.</span></div>
+      <div class="why"><span class="ko k3">산</span> は <span class="ko">사다</span>(買う)の過去連体形と同じ形です。<span class="ko">제가 산 집</span> は「私が買った家」と聞こえやすいので、「住んでいた家」なら <span class="ko k1">살던</span> か <span class="ko k2">살았던</span> を使います。</div>
+    </div>
+  </section>
+
+  <!-- 7. 会話 -->
+  <section>
+    <h2><span class="num">7</span>短い会話</h2>
+
+    <div class="dialog">
+      <div class="title"><span>会話1 週末の帰省</span><button class="small" type="button">訳を隠す</button></div>
+      <div class="line"><span class="who">ジミン</span><div><span class="ko">주말에 어디 갔다 왔어요?</span><span class="tr">週末どこか行ってきたの?</span></div></div>
+      <div class="line"><span class="who">ユナ</span><div><span class="ko">어릴 때 <b class="k1">살던</b> 동네에 갔다 왔어요.</span><span class="tr">子どものころ住んでいた町に行ってきました。</span></div></div>
+      <div class="line"><span class="who">ジミン</span><div><span class="ko">우와, 많이 바뀌었어요?</span><span class="tr">わあ、かなり変わってた?</span></div></div>
+      <div class="line"><span class="who">ユナ</span><div><span class="ko">네. 제가 자주 <b class="k1">가던</b> 떡볶이집이 없어졌어요. 진짜 슬펐어요.</span><span class="tr">はい。よく通っていたトッポッキ屋さんがなくなってて。すごく悲しかったです。</span></div></div>
+      <div class="line"><span class="who">ジミン</span><div><span class="ko">아…. 추억의 장소였는데.</span><span class="tr">ああ…。思い出の場所だったのにね。</span></div></div>
+      <div class="line"><span class="who">ユナ</span><div><span class="ko">그래도 제가 <b class="k2">다녔던</b> 초등학교는 그대로였어요.</span><span class="tr">でも、私が通った小学校はそのままでした。</span></div></div>
+      <p class="memo">毎日のように通っていた店は <span class="ko k1">가던</span>。卒業してもう終わった小学校は <span class="ko k2">다녔던</span> で振り返っています。</p>
+    </div>
+
+    <div class="dialog">
+      <div class="title"><span>会話2 サークル室で</span><button class="small" type="button">訳を隠す</button></div>
+      <div class="line"><span class="who">テオ</span><div><span class="ko">어? 제가 <b class="k1">마시던</b> 커피 어디 갔어요?</span><span class="tr">あれ?僕の飲みかけのコーヒー、どこ行きました?</span></div></div>
+      <div class="line"><span class="who">ソヒ</span><div><span class="ko">헉, 다 <b class="k3">마신</b> 줄 알고 버렸어요…. 미안해요!</span><span class="tr">えっ、飲み終わったと思って捨てちゃいました…。ごめんなさい!</span></div></div>
+      <div class="line"><span class="who">テオ</span><div><span class="ko">괜찮아요. 근데 아까 <b class="k2">먹었던</b> 쿠키는 어디서 샀어요? 진짜 맛있었어요.</span><span class="tr">大丈夫です。ところで、さっき食べたクッキーはどこで買ったんですか?すごくおいしかったです。</span></div></div>
+      <div class="line"><span class="who">ソヒ</span><div><span class="ko">학교 앞에 새로 <b class="k3">생긴</b> 빵집이요!</span><span class="tr">学校の前に新しくできたパン屋さんです!</span></div></div>
+      <p class="memo">飲みかけは <span class="ko k1">마시던</span>、飲み終わったのは <span class="ko k3">마신</span>。<span class="ko k2">먹었던</span> は「さっき食べたあのクッキー」と思い出しています。<span class="ko k3">생긴</span> は「できた」という事実です。</p>
+    </div>
+  </section>
+
+  <!-- 8. 練習問題 -->
+  <section id="quiz">
+    <h2><span class="num">8</span>練習問題</h2>
+    <p class="note">自然なほうを押してください。正解と解説が出ます。</p>
+
+    <div class="q" data-answer="마시던">
+      <p class="qtext"><span class="scene">机の上に、少しだけ飲んだジュースがあります。</span>Q1. <span class="ko">그거 제가 ( ? ) 주스예요. 버리지 마세요!</span></p>
+      <div class="opts"><button type="button" data-v="마신">마신</button><button type="button" data-v="마시던">마시던</button></div>
+      <div class="fb" hidden><span class="res"></span>飲んでいる途中、つまり「飲みかけ」なので <span class="ko k1">Ⅰ-던</span> です。</div>
+    </div>
+
+    <div class="q" data-answer="만난">
+      <p class="qtext">Q2. <span class="ko">이 사람은 어제 미팅에서 처음 ( ? ) 사람이에요.</span></p>
+      <div class="opts"><button type="button" data-v="만나던">만나던</button><button type="button" data-v="만난">만난</button></div>
+      <div class="fb" hidden><span class="res"></span>「初めて会った」は1回で終わった出来事です。<span class="ko k3">Ⅱ-ㄴ</span> の <span class="ko">만난</span> が自然です(<span class="ko">만났던</span> も言えます)。</div>
+    </div>
+
+    <div class="q" data-answer="귀여웠던">
+      <p class="qtext"><span class="scene">今はすっかり大きくなった犬の、子犬のころの写真を見て。</span>Q3. <span class="ko">와, 이때 진짜 ( ? ) 우리 강아지!</span></p>
+      <div class="opts"><button type="button" data-v="귀여운">귀여운</button><button type="button" data-v="귀여웠던">귀여웠던</button></div>
+      <div class="fb" hidden><span class="res"></span>形容詞の <span class="ko k3">귀여운</span> は「(今)かわいい」です。「この時かわいかった」と過去を言うので <span class="ko k2">Ⅲ-ㅆ던</span> を使います(<span class="ko">귀엽다</span> はㅂ変則で <span class="ko">귀여웠던</span>)。</div>
+    </div>
+
+    <div class="q" data-answer="살던">
+      <p class="qtext"><span class="scene">「住んでいた家」と言いたいとき。</span>Q4. <span class="ko">여기가 제가 초등학생 때 ( ? ) 집이에요.</span></p>
+      <div class="opts"><button type="button" data-v="산">산</button><button type="button" data-v="살던">살던</button></div>
+      <div class="fb" hidden><span class="res"></span><span class="ko">산 집</span> は「買った家」と聞こえやすいので、<span class="ko k1">살던</span>(または <span class="ko k2">살았던</span>)を使います。</div>
+    </div>
+
+    <div class="q" data-answer="이었던">
+      <p class="qtext"><span class="scene">高校のときクラス委員だった友達。今はもう違います。</span>Q5. <span class="ko">고등학교 때 반장( ? ) 친구가 다음 주에 결혼해요.</span></p>
+      <div class="opts"><button type="button" data-v="인">인</button><button type="button" data-v="이었던">이었던</button></div>
+      <div class="fb" hidden><span class="res"></span><span class="ko">반장인</span> だと「今クラス委員である」になります。過去のことなので指定詞の <span class="ko k2">Ⅲ-ㅆ던</span>、<span class="ko">반장이었던</span> です。</div>
+    </div>
+
+    <p class="score" aria-live="polite"></p>
+    <p style="text-align:right"><button class="small" type="button" id="reset">もう一度解く</button></p>
+  </section>
+
+</main>
+
+<footer>似ている表現の使い分け 02|韓国語初級</footer>
+
+<script>
+  // 練習問題
+  const qs = document.querySelectorAll('.q');
+  const scoreEl = document.querySelector('.score');
+  function updateScore() {
+    const done = document.querySelectorAll('.q.done').length;
+    const right = document.querySelectorAll('.q.correct').length;
+    scoreEl.textContent = done ? `正解 ${right} / ${qs.length}` : '';
+  }
+  qs.forEach(q => {
+    const ans = q.dataset.answer;
+    q.querySelectorAll('.opts button').forEach(b => {
+      b.addEventListener('click', () => {
+        if (q.classList.contains('done')) return;
+        q.classList.add('done');
+        const ok = b.dataset.v === ans;
+        if (ok) q.classList.add('correct');
+        q.querySelectorAll('.opts button').forEach(x => {
+          if (x.dataset.v === ans) x.classList.add('right');
+        });
+        if (!ok) b.classList.add('wrong');
+        const fb = q.querySelector('.fb');
+        fb.querySelector('.res').textContent = ok ? '○ 正解です!' : `もう一歩!正解は「${ans}」です。`;
+        fb.hidden = false;
+        updateScore();
+      });
+    });
+  });
+  document.getElementById('reset').addEventListener('click', () => {
+    qs.forEach(q => {
+      q.classList.remove('done', 'correct');
+      q.querySelectorAll('.opts button').forEach(x => x.classList.remove('right', 'wrong'));
+      q.querySelector('.fb').hidden = true;
+    });
+    updateScore();
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // 会話の訳の表示・非表示
+  document.querySelectorAll('.dialog .small').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const d = btn.closest('.dialog');
+      d.classList.toggle('hide-tr');
+      btn.textContent = d.classList.contains('hide-tr') ? '訳を表示' : '訳を隠す';
+    });
+  });
+</script>
+</body>
+</html>
