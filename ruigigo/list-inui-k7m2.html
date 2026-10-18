@@ -11,10 +11,17 @@
 <script>
   // ===== 教材データ =====
   // 1行足すと一覧に増えます。url は相対パス(同じフォルダのファイル名)でも https:// から始まるURLでも可。
+  // status: 'draft' にすると「下書き・学生非公開」と表示されます。
   const ITEMS = [
-    { ko: 'Ⅱ-ㄹ게요 / Ⅱ-ㄹ 거예요', ja: '約束・申し出か、予定か(제가 할게요/할 거예요)', date: '2026-10-17', url: 'g01-rgeyo.html' },
-    { ko: '살던 / 살았던 / 산',       ja: '回想の連体形(Ⅰ-던・Ⅲ-ㅆ던・Ⅱ-ㄴ)',          date: '2026-10-17', url: 'g02-deon.html' },
-    { ko: '관형사형(連体形)',          ja: '韓国語の連体形(音声つき)',                   date: '',           url: 'https://storied-blini-73fed5.netlify.app/' },
+    { ko: 'Ⅱ-ㄹ게요 / Ⅱ-ㄹ 거예요',            ja: '約束・申し出か、予定か(제가 할게요/할 거예요)',  date: '2026-10-17', url: 'g01-rgeyo.html' },
+    { ko: '살던 / 살았던 / 산',                  ja: '回想の連体形(Ⅰ-던・Ⅲ-ㅆ던・Ⅱ-ㄴ)',           date: '2026-10-17', url: 'g02-deon.html', status: 'draft' },
+    { ko: 'Ⅰ-고 / Ⅲ-서',                        ja: '〜して:独立した動作か、一連の動作か',          date: '2026-10-18', url: 'g03-go-seo.html' },
+    { ko: 'Ⅲ-서 / Ⅱ-니까(Ⅰ-거든요)',            ja: '〜から・ので:後ろに勧誘・命令が来るか',        date: '2026-10-18', url: 'g04-seo-nikka.html' },
+    { ko: 'Ⅰ-고 있다 / Ⅲ 있다',                  ja: '〜ている:動作の途中か、結果の状態か',          date: '2026-10-18', url: 'g05-goitda.html' },
+    { ko: '안 / 못(Ⅰ-지 않다・Ⅰ-지 못하다・Ⅱ-ㄹ 수 없다)', ja: '「しない」と「できない」',               date: '2026-10-18', url: 'g06-an-mot.html' },
+    { ko: '그 / 저',                             ja: '日本語の「あの」が 그 になるとき',              date: '2026-10-18', url: 'g07-geu-jeo.html' },
+    { ko: 'Ⅱ-ㄹ 수 있다 / Ⅱ-ㄹ 줄 알다',          ja: '〜できる:状況として可能か、身につけたスキルか', date: '2026-10-18', url: 'g08-su-jul.html' },
+    { ko: '관형사형(連体形)',                     ja: '韓国語の連体形(音声つき)',                     date: '',           url: 'https://storied-blini-73fed5.netlify.app/' },
   ];
 </script>
 <style>
@@ -49,6 +56,8 @@
     border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; white-space: nowrap;
   }
   button.copy.done { border-color: var(--ok); color: var(--ok); }
+  .draft { display: inline-block; margin-left: 6px; padding: 0 8px; border-radius: 999px; background: #fbe9e7; color: #b8382c; font-size: .75rem; font-weight: 700; white-space: nowrap; }
+  tr.is-draft td { color: var(--sub); }
   .empty { text-align: center; color: var(--sub); padding: 20px; }
   footer { color: var(--sub); font-size: .8rem; text-align: center; padding: 24px 0 40px; }
 
@@ -111,10 +120,10 @@
   function render() {
     const word = input.value.trim().toLowerCase();
     const rows = ITEMS.filter(it =>
-      !word || [it.ko, it.ja, it.date, it.url].join(' ').toLowerCase().includes(word));
+      !word || [it.ko, it.ja, it.date, it.url, it.status === 'draft' ? '下書き' : ''].join(' ').toLowerCase().includes(word));
     list.innerHTML = rows.length ? rows.map(it => `
-      <tr>
-        <td><span class="ko">${esc(it.ko)}</span></td>
+      <tr class="${it.status === 'draft' ? 'is-draft' : ''}">
+        <td><span class="ko">${esc(it.ko)}</span>${it.status === 'draft' ? '<span class="draft">下書き・学生非公開</span>' : ''}</td>
         <td>${esc(it.ja)}</td>
         <td class="date">${esc(it.date || '—')}</td>
         <td class="actions">

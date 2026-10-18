@@ -156,6 +156,26 @@
   .fb .res { font-weight: 700; display: block; }
   .score { text-align: right; font-weight: 700; margin: 6px 0 0; }
 
+  /* 図(流れ・比喩) */
+  .flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 12px 0; }
+  .flow .box {
+    border: 2px solid currentColor; border-radius: 8px; padding: 2px 10px; background: #fff;
+    font-family: "Noto Sans KR", sans-serif; font-weight: 700;
+  }
+  .flow .arrow { color: var(--sub); font-weight: 700; }
+  .flow .cut { color: var(--sub); font-size: .85rem; border: 1px dashed var(--sub); border-radius: 6px; padding: 0 6px; }
+  .flow .res { width: 100%; text-align: center; }
+  .film { display: grid; gap: 10px; margin: 12px 0; }
+  .film .core p { margin-top: 2px; }
+
+  /* まとめ */
+  table.sum { min-width: 0; font-size: .86rem; }
+  .sum th, .sum td { text-align: left; padding: 8px 5px; }
+  .sum td:first-child, .sum th:first-child { width: 4.2em; }
+  .film .flow { gap: 4px; flex-wrap: nowrap; }
+  .film .flow .box { font-size: .85rem; padding: 2px 6px; white-space: nowrap; }
+  .film .flow .cut { white-space: nowrap; }
+
   footer { color: var(--sub); font-size: .8rem; text-align: center; padding: 8px 0 40px; }
 </style>
 </head>
@@ -205,6 +225,11 @@
       <li><b class="ko k2">할 거예요</b> は相手がいなくても言えます。手帳に書いた予定を読み上げるような感じです。</li>
       <li><b class="ko k1">할게요</b> の主語は「私」だけです。質問の形(×뭐 할게요?)にもなりません。</li>
     </ul>
+    <div class="column">
+      <span class="head"><span class="ko k2">Ⅱ-ㄹ 거예요</span> の3つの使い方</span>
+      <p>① (私は)〜するつもりです[自分の意志]<br>② (相手は)〜するつもりですか[相手の意志を聞く]<br>③ (その事は)〜すると思います[状況からの推量]</p>
+      <p class="note">成り立ちは Ⅱ-ㄹ+것이에요(直訳「〜するのです」)。これが縮まって <span class="ko">거예요</span> になりました。</p>
+    </div>
     <h3>あわせて覚えたい2つ</h3>
     <div class="extra">
       <div class="core b3"><span class="ko k3"><b>Ⅰ-겠습니다</b></span> → 改まった場面の「〜いたします」。面接や発表などで、意志をきっぱり伝えます。</div>
@@ -214,20 +239,20 @@
 
   <!-- 3. 形の作り方 -->
   <section>
-    <h2><span class="num">3</span>形の作り方(語基式)</h2>
-    <p><span class="ko k1">ㄹ게요</span>・<span class="ko k2">ㄹ 거예요</span>・<span class="ko k4">ㄹ래요</span> は<strong>第Ⅱ語基</strong>に、<span class="ko k3">겠습니다</span> は<strong>第Ⅰ語基</strong>に付きます。</p>
+    <h2><span class="num">3</span>形の作り方</h2>
+    <p><span class="ko k1">ㄹ게요</span>・<span class="ko k2">ㄹ 거예요</span>・<span class="ko k4">ㄹ래요</span> は<strong>活用形Ⅱ</strong>に、<span class="ko k3">겠습니다</span> は<strong>活用形Ⅰ</strong>に付きます。</p>
     <div class="tbl">
       <table>
         <tr><th>基本形</th><th class="k1">Ⅱ-ㄹ게요</th><th class="k2">Ⅱ-ㄹ 거예요</th><th class="k4">Ⅱ-ㄹ래요</th><th class="k3">Ⅰ-겠습니다</th></tr>
-        <tr><td><span class="ko">가다</span><span class="sm">Ⅰ 가- / Ⅱ 가-</span></td><td class="ko">갈게요</td><td class="ko">갈 거예요</td><td class="ko">갈래요</td><td class="ko">가겠습니다</td></tr>
-        <tr><td><span class="ko">먹다</span><span class="sm">Ⅰ 먹- / Ⅱ 먹으-</span></td><td class="ko">먹을게요</td><td class="ko">먹을 거예요</td><td class="ko">먹을래요</td><td class="ko">먹겠습니다</td></tr>
-        <tr><td><span class="ko">만들다</span><span class="sm">ㄹ語幹 Ⅱ 만들-</span></td><td class="ko">만들게요</td><td class="ko">만들 거예요</td><td class="ko">만들래요</td><td class="ko">만들겠습니다</td></tr>
-        <tr><td><span class="ko">듣다</span><span class="sm">ㄷ変則 Ⅱ 들으-</span></td><td class="ko">들을게요</td><td class="ko">들을 거예요</td><td class="ko">들을래요</td><td class="ko">듣겠습니다</td></tr>
-        <tr><td><span class="ko">돕다</span><span class="sm">ㅂ変則 Ⅱ 도우-</span></td><td class="ko">도울게요</td><td class="ko">도울 거예요</td><td class="ko">도울래요</td><td class="ko">돕겠습니다</td></tr>
+        <tr><td><span class="ko">가다</span><span class="sm">Ⅰ-가 / Ⅱ-가</span></td><td class="ko">갈게요</td><td class="ko">갈 거예요</td><td class="ko">갈래요</td><td class="ko">가겠습니다</td></tr>
+        <tr><td><span class="ko">먹다</span><span class="sm">Ⅰ-먹 / Ⅱ-먹으</span></td><td class="ko">먹을게요</td><td class="ko">먹을 거예요</td><td class="ko">먹을래요</td><td class="ko">먹겠습니다</td></tr>
+        <tr><td><span class="ko">만들다</span><span class="sm">ㄹ語幹 Ⅱ-만들</span></td><td class="ko">만들게요</td><td class="ko">만들 거예요</td><td class="ko">만들래요</td><td class="ko">만들겠습니다</td></tr>
+        <tr><td><span class="ko">듣다</span><span class="sm">ㄷ変則 Ⅱ-들으</span></td><td class="ko">들을게요</td><td class="ko">들을 거예요</td><td class="ko">들을래요</td><td class="ko">듣겠습니다</td></tr>
+        <tr><td><span class="ko">돕다</span><span class="sm">ㅂ変則 Ⅱ-도우</span></td><td class="ko">도울게요</td><td class="ko">도울 거예요</td><td class="ko">도울래요</td><td class="ko">돕겠습니다</td></tr>
       </table>
     </div>
     <ul class="points note">
-      <li>ㄹ語幹は第Ⅱ語基に <span class="ko">으</span> が入りません。語尾の ㄹ と重なって <span class="ko">만들게요</span> になります。</li>
+      <li>ㄹ語幹は活用形Ⅱに <span class="ko">으</span> が入りません。語尾の ㄹ と重なって <span class="ko">만들게요</span> になります。</li>
       <li>発音は <span class="ko">[갈께요]</span>・<span class="ko">[갈 꺼예요]</span> のように濃音になります。つづりは <span class="ko">갈게요</span> です(<span class="ko">×갈께요</span>)。</li>
       <li>話し言葉では <span class="ko">할 거예요</span> が <span class="ko">할 거에요</span> と書かれることもありますが、正しいつづりは <span class="ko">거예요</span> です。</li>
     </ul>
@@ -244,7 +269,7 @@
         <tr><td class="scene">相手の予定・つもりを聞く</td><td class="x">×</td><td class="o">○<span class="sm">뭐 할 거예요?</span></td><td class="o">○<span class="sm">하시겠어요?</span></td><td class="o">○<span class="sm">뭐 할래요?</span></td></tr>
         <tr><td class="scene">主語が「私」以外(人・天気など)</td><td class="x">×</td><td class="o">○<span class="sm">予定・推量</span></td><td class="o">○<span class="sm">推量・天気予報</span></td><td class="x">×</td></tr>
         <tr><td class="scene">自分の好み・したいことを言う</td><td class="x">×</td><td class="t">△</td><td class="x">×</td><td class="o">○</td></tr>
-        <tr><td class="scene">謝って「次から気をつけます」</td><td class="o">○</td><td class="t">△</td><td class="o">○<span class="sm">改まった場面</span></td><td class="x">×</td></tr>
+        <tr><td class="scene">謝って「次から気をつけます」</td><td class="o">○<span class="sm">相手への約束</span></td><td class="o">○<span class="sm">自分の決意</span></td><td class="o">○<span class="sm">改まった場面</span></td><td class="x">×</td></tr>
       </table>
     </div>
     <p class="legend"><span class="o">○</span> 自然 <span class="t">△</span> 場面によっては使える・少し不自然 <span class="x">×</span> 使わない</p>
@@ -259,7 +284,7 @@
       <div class="ex b1"><span class="ko">제가 <span class="k1">할게요</span>.</span>
         <span class="ja">「じゃあ、私がやりますね」。相手の頼みを受けて、その場で引き受けています。</span></div>
       <div class="ex b2"><span class="ko">제가 <span class="k2">할 거예요</span>.</span>
-        <span class="ja">「私がやることになっています」「私がやるつもりです」。すでに決まっていることを伝える言い方です。頼まれた直後に言うと「(ほかの人じゃなくて)私がやるんです」と、少し強く主張しているように聞こえます。</span></div>
+        <span class="ja">「私がやるつもりです」「私がやることになっています」。予定や決意を述べる言い方です。頼まれたことを引き受ける返事としては <span class="ko k1">제가 할게요</span> のほうが自然です。</span></div>
     </div>
 
     <div class="cmpset">
@@ -276,6 +301,22 @@
         <span class="ja">「週末は家にいるね(だから、いつでも来ていいよ)」。相手のことを考えて約束しています。</span></div>
       <div class="ex b2"><span class="ko">주말에 집에 <span class="k2">있을 거예요</span>.</span>
         <span class="ja">「週末は家にいる予定です」。自分の予定をそのまま伝えています。</span></div>
+    </div>
+
+    <div class="cmpset">
+      <h3>④ 遅刻して謝るとき</h3>
+      <div class="ex b1"><span class="ko">늦어서 미안해요. 다음부터는 안 <span class="k1">늦을게요</span>.</span>
+        <span class="ja">「次からは遅れないようにしますね」。目の前の相手への約束になります。</span></div>
+      <div class="ex b2"><span class="ko">늦어서 미안해요. 다음부터는 안 <span class="k2">늦을 거예요</span>.</span>
+        <span class="ja">「次からは遅れません」。こちらも自然です。「もう遅れないぞ」という自分の決意を述べる言い方になります。</span></div>
+    </div>
+
+    <div class="cmpset">
+      <h3>⑤ 友達を少し待たせるとき</h3>
+      <div class="ex b1"><span class="ko">잠깐만요, 금방 <span class="k1">갔다 올게요</span>!</span>
+        <span class="ja">「ちょっと待ってて、すぐ戻るね!」。待ってくれる相手に向けた約束です。</span></div>
+      <div class="ex b2"><span class="ko">잠깐만요, 금방 <span class="k2">갔다 올 거예요</span>!</span>
+        <span class="ja">「すぐ戻ってくるから!」。これも自然です。「すぐ戻る」という予定を伝える言い方になります。</span></div>
     </div>
   </section>
 
@@ -300,20 +341,6 @@
       <div class="row"><span class="o">○</span><span class="ko">내년에 한국으로 교환학생 <span class="k2">갈 거예요</span>.</span></div>
       <div class="row ng"><span class="x">×</span><span class="ko">내년에 한국으로 교환학생 갈게요.</span></div>
       <div class="why">自分の予定を紹介しているだけで、聞き手と約束しているわけではありません。だから <span class="ko k2">ㄹ 거예요</span> が自然です。</div>
-    </div>
-
-    <div class="judge">
-      <span class="scene">遅刻して謝るとき</span>
-      <div class="row"><span class="o">○</span><span class="ko">늦어서 미안해요. 다음부터는 안 <span class="k1">늦을게요</span>.</span></div>
-      <div class="row ng"><span class="t">△</span><span class="ko">늦어서 미안해요. 다음부터는 안 늦을 거예요.</span></div>
-      <div class="why"><span class="ko k1">ㄹ게요</span> だと「相手に約束します」という気持ちが伝わります。<span class="ko k2">ㄹ 거예요</span> だと自分の決意を宣言しているようで、謝る気持ちが伝わりにくくなります。</div>
-    </div>
-
-    <div class="judge">
-      <span class="scene">友達を少し待たせるとき</span>
-      <div class="row"><span class="o">○</span><span class="ko">잠깐만요, 금방 <span class="k1">갔다 올게요</span>!</span></div>
-      <div class="row ng"><span class="t">△</span><span class="ko">잠깐만요, 금방 갔다 올 거예요!</span></div>
-      <div class="why">「ちょっと待ってて、すぐ戻るね!」。待ってくれる相手への声かけなので <span class="ko k1">ㄹ게요</span> がぴったりです。</div>
     </div>
 
     <div class="column">
@@ -347,9 +374,24 @@
     </div>
   </section>
 
-  <!-- 8. 練習問題 -->
+  <!-- 8. まとめ -->
+  <section>
+    <h2><span class="num">8</span>まとめ</h2>
+    <p>ポイントは2つの軸です。<strong>客観的か主観的か</strong>、そして<strong>聞き手が必要かどうか</strong>です。</p>
+    <div class="tbl">
+      <table class="sum">
+        <tr><th></th><th class="k2 ko">Ⅱ-ㄹ 거예요</th><th class="k1 ko">Ⅱ-ㄹ게요</th><th class="k3 ko">Ⅰ-겠-</th></tr>
+        <tr><td>伝え方</td><td><strong>客観的</strong><br>予定を事実として伝える</td><td><strong>主観的</strong><br>相手との関係の中で約束する</td><td>固い意志をはっきり示す</td></tr>
+        <tr><td>聞き手</td><td>いなくてもよい<br>(独り言でも言える)</td><td><strong>必要</strong><br>(対人が必須)</td><td>聞き手・聴衆の前で</td></tr>
+        <tr><td>場面</td><td>スケジュール確認<br>手帳を見ながら</td><td>役割分担<br>別れぎわ</td><td>面接・スピーチ<br>公的な場</td></tr>
+        <tr><td>例</td><td class="ko">내일 갈 거예요.</td><td class="ko">그럼 제가 갈게요.</td><td class="ko">열심히 하겠습니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 9. 練習問題 -->
   <section id="quiz">
-    <h2><span class="num">8</span>練習問題</h2>
+    <h2><span class="num">9</span>練習問題</h2>
     <p class="note">自然なほうを押してください。正解と解説が出ます。</p>
 
     <div class="q" data-answer="들게요">
@@ -370,10 +412,10 @@
       <div class="fb" hidden><span class="res"></span>主語は「雨」です。「降ると思うよ」という推量なので <span class="ko k2">ㄹ 거예요</span> を使います。</div>
     </div>
 
-    <div class="q" data-answer="늦을게요">
-      <p class="qtext"><span class="scene">待ち合わせに遅れて、友達に謝ります。</span>Q4. <span class="ko">진짜 미안해요. 다음부터는 안 ( ? ).</span></p>
-      <div class="opts"><button type="button" data-v="늦을 거예요">늦을 거예요</button><button type="button" data-v="늦을게요">늦을게요</button></div>
-      <div class="fb" hidden><span class="res"></span>相手への約束なので <span class="ko k1">ㄹ게요</span> です。<span class="ko k2">ㄹ 거예요</span> だと決意表明のように聞こえて、謝る気持ちが弱くなります。</div>
+    <div class="q" data-answer="연락할게요">
+      <p class="qtext"><span class="scene">別れぎわに友達から頼まれました。</span>Q4. <span class="ko">A: 집에 도착하면 꼭 연락 줘요!</span><br><span class="ko">B: 네, 도착하면 바로 ( ? ).</span></p>
+      <div class="opts"><button type="button" data-v="연락할 거예요">연락할 거예요</button><button type="button" data-v="연락할게요">연락할게요</button></div>
+      <div class="fb" hidden><span class="res"></span>相手の頼みに「はい、そうしますね」と答える場面です。引き受けの返事には <span class="ko k1">ㄹ게요</span> が自然です。<span class="ko k2">ㄹ 거예요</span> は予定を述べる言い方なので、返事としてはかみ合いにくくなります。</div>
     </div>
 
     <div class="q" data-answer="하겠습니다">

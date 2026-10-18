@@ -156,6 +156,26 @@
   .fb .res { font-weight: 700; display: block; }
   .score { text-align: right; font-weight: 700; margin: 6px 0 0; }
 
+  /* 図(流れ・比喩) */
+  .flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 12px 0; }
+  .flow .box {
+    border: 2px solid currentColor; border-radius: 8px; padding: 2px 10px; background: #fff;
+    font-family: "Noto Sans KR", sans-serif; font-weight: 700;
+  }
+  .flow .arrow { color: var(--sub); font-weight: 700; }
+  .flow .cut { color: var(--sub); font-size: .85rem; border: 1px dashed var(--sub); border-radius: 6px; padding: 0 6px; }
+  .flow .res { width: 100%; text-align: center; }
+  .film { display: grid; gap: 10px; margin: 12px 0; }
+  .film .core p { margin-top: 2px; }
+
+  /* まとめ */
+  table.sum { min-width: 0; font-size: .86rem; }
+  .sum th, .sum td { text-align: left; padding: 8px 5px; }
+  .sum td:first-child, .sum th:first-child { width: 4.2em; }
+  .film .flow { gap: 4px; flex-wrap: nowrap; }
+  .film .flow .box { font-size: .85rem; padding: 2px 6px; white-space: nowrap; }
+  .film .flow .cut { white-space: nowrap; }
+
   footer { color: var(--sub); font-size: .8rem; text-align: center; padding: 8px 0 40px; }
 </style>
 </head>
@@ -212,22 +232,22 @@
 
   <!-- 3. 形の作り方 -->
   <section>
-    <h2><span class="num">3</span>形の作り方(語基式)</h2>
-    <p><span class="ko k1">던</span> は<strong>第Ⅰ語基</strong>に、<span class="ko k2">ㅆ던</span> は<strong>第Ⅲ語基</strong>に、<span class="ko k3">ㄴ</span> は<strong>第Ⅱ語基</strong>に付きます。</p>
+    <h2><span class="num">3</span>形の作り方</h2>
+    <p><span class="ko k1">던</span> は<strong>活用形Ⅰ</strong>に、<span class="ko k2">ㅆ던</span> は<strong>活用形Ⅲ</strong>に、<span class="ko k3">ㄴ</span> は<strong>活用形Ⅱ</strong>に付きます。</p>
     <div class="tbl">
       <table>
         <tr><th>基本形</th><th class="k1">Ⅰ-던</th><th class="k2">Ⅲ-ㅆ던</th><th class="k3">Ⅱ-ㄴ</th></tr>
-        <tr><td><span class="ko">살다</span><span class="sm">ㄹ語幹 Ⅲ 살아-</span></td><td class="ko">살던</td><td class="ko">살았던</td><td class="ko">산</td></tr>
-        <tr><td><span class="ko">먹다</span><span class="sm">Ⅱ 먹으- / Ⅲ 먹어-</span></td><td class="ko">먹던</td><td class="ko">먹었던</td><td class="ko">먹은</td></tr>
-        <tr><td><span class="ko">가다</span><span class="sm">Ⅱ 가- / Ⅲ 가-</span></td><td class="ko">가던</td><td class="ko">갔던</td><td class="ko">간</td></tr>
-        <tr><td><span class="ko">하다</span><span class="sm">Ⅲ 해-</span></td><td class="ko">하던</td><td class="ko">했던</td><td class="ko">한</td></tr>
-        <tr><td><span class="ko">듣다</span><span class="sm">ㄷ変則 Ⅱ 들으- / Ⅲ 들어-</span></td><td class="ko">듣던</td><td class="ko">들었던</td><td class="ko">들은</td></tr>
-        <tr><td><span class="ko">예쁘다</span><span class="sm">形容詞 Ⅲ 예뻐-</span></td><td class="ko">(예쁘던)</td><td class="ko">예뻤던</td><td><span class="ko">예쁜</span><span class="sm">※現在「きれいな」</span></td></tr>
-        <tr><td><span class="ko">학생이다</span><span class="sm">指定詞 Ⅲ 학생이어-</span></td><td class="ko">(학생이던)</td><td class="ko">학생이었던</td><td><span class="ko">학생인</span><span class="sm">※現在「学生である」</span></td></tr>
+        <tr><td><span class="ko">살다</span><span class="sm">ㄹ語幹 Ⅲ-살아</span></td><td class="ko">살던</td><td class="ko">살았던</td><td class="ko">산</td></tr>
+        <tr><td><span class="ko">먹다</span><span class="sm">Ⅱ-먹으 / Ⅲ-먹어</span></td><td class="ko">먹던</td><td class="ko">먹었던</td><td class="ko">먹은</td></tr>
+        <tr><td><span class="ko">가다</span><span class="sm">Ⅱ-가 / Ⅲ-가</span></td><td class="ko">가던</td><td class="ko">갔던</td><td class="ko">간</td></tr>
+        <tr><td><span class="ko">하다</span><span class="sm">Ⅲ-해</span></td><td class="ko">하던</td><td class="ko">했던</td><td class="ko">한</td></tr>
+        <tr><td><span class="ko">듣다</span><span class="sm">ㄷ変則 Ⅱ-들으 / Ⅲ-들어</span></td><td class="ko">듣던</td><td class="ko">들었던</td><td class="ko">들은</td></tr>
+        <tr><td><span class="ko">예쁘다</span><span class="sm">形容詞 Ⅲ-예뻐</span></td><td class="ko">(예쁘던)</td><td class="ko">예뻤던</td><td><span class="ko">예쁜</span><span class="sm">※現在「きれいな」</span></td></tr>
+        <tr><td><span class="ko">학생이다</span><span class="sm">指定詞 Ⅲ-학생이어</span></td><td class="ko">(학생이던)</td><td class="ko">학생이었던</td><td><span class="ko">학생인</span><span class="sm">※現在「学生である」</span></td></tr>
       </table>
     </div>
     <ul class="points note">
-      <li><span class="ko">살다</span> はㄹ語幹なので、第Ⅱ語基に <span class="ko">ㄴ</span> が付くと ㄹ が落ちて <span class="ko">산</span> になります。</li>
+      <li><span class="ko">살다</span> はㄹ語幹なので、活用形Ⅱに <span class="ko">ㄴ</span> が付くと ㄹ が落ちて <span class="ko">산</span> になります。</li>
       <li>形容詞・指定詞の <span class="ko k3">Ⅱ-ㄴ</span> は<strong>現在</strong>の意味です。過去を言うときは <span class="ko k2">Ⅲ-ㅆ던</span> を使います。( )の <span class="ko k1">Ⅰ-던</span> の形もありますが、会話ではあまり使いません。</li>
       <li>母音で終わる名詞の指定詞は縮まって <span class="ko">친구였던</span>(友達だった)のようになります。</li>
     </ul>

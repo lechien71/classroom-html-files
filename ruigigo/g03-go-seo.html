@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ⅰ-고とⅢ-서|似ている表現の使い分け 03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== シリーズ共通デザイン(似ている表現の使い分け) ===== */
+  :root {
+    --bg: #faf8f4;
+    --card: #ffffff;
+    --ink: #2b2b2b;
+    --sub: #6b655e;
+    --line: #e6dfd3;
+    --band: #222222;
+    /* 比べる表現の色(ページごとに意味を決めて、全体でそろえる) */
+    --c1: #c9620a; --c1bg: #fdf0e2;   /* オレンジ */
+    --c2: #2a64a8; --c2bg: #e8f0fa;   /* 青 */
+    --c3: #2b8152; --c3bg: #e6f3eb;   /* 緑 */
+    --c4: #7a4bab; --c4bg: #f2ebf8;   /* 紫 */
+    --ok: #2b8152; --mid: #b07a12; --ng: #b8382c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .ko {
+    font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+    font-size: 1.12em;
+    font-weight: 500;
+  }
+  b.ko, .ko b, strong.ko { font-weight: 700; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+  header.band { background: var(--band); color: #fff; padding: 28px 0 24px; }
+  header .series { margin: 0; font-size: .85rem; color: #cfc9c0; letter-spacing: .05em; }
+  header h1 { margin: 6px 0 6px; font-size: 1.5rem; line-height: 1.5; }
+  header h1 .ko { font-size: 1.05em; font-weight: 700; }
+  header .sub { margin: 0; font-size: .9rem; color: #e4ded5; }
+  header .k1 { color: #ffa65c; } header .k2 { color: #8fbcf2; }
+  header .k3 { color: #8fd6ab; } header .k4 { color: #c9a6ee; }
+
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 18px;
+    margin: 20px 0;
+  }
+  h2 { font-size: 1.15rem; margin: 0 0 12px; line-height: 1.5; }
+  h2 .num {
+    display: inline-block; background: var(--band); color: #fff;
+    border-radius: 6px; padding: 0 8px; margin-right: 8px; font-size: .85rem;
+  }
+  h3 { font-size: 1rem; margin: 18px 0 6px; }
+  p { margin: 8px 0; }
+  .note { color: var(--sub); font-size: .9rem; }
+
+  /* 色 */
+  .k1 { color: var(--c1); } .k2 { color: var(--c2); } .k3 { color: var(--c3); } .k4 { color: var(--c4); }
+  .chip {
+    display: inline-block; border-radius: 999px; padding: 0 10px; margin: 2px 2px 2px 0;
+    color: #fff; font-weight: 700; font-size: .95em; line-height: 1.8;
+  }
+  .chip.k1 { background: var(--c1); } .chip.k2 { background: var(--c2); }
+  .chip.k3 { background: var(--c3); } .chip.k4 { background: var(--c4); }
+
+  /* 見本の文 */
+  .big { text-align: center; margin: 14px 0; }
+  .big .ko { display: block; font-size: 1.35em; font-weight: 700; }
+
+  /* ひとことで言うと */
+  .core { border-radius: 8px; padding: 12px 14px; margin: 10px 0; }
+  .core .head { font-weight: 700; }
+  .core p { margin: 4px 0 0; }
+  .b1 { background: var(--c1bg); border-left: 6px solid var(--c1); }
+  .b2 { background: var(--c2bg); border-left: 6px solid var(--c2); }
+  .b3 { background: var(--c3bg); border-left: 6px solid var(--c3); }
+  .b4 { background: var(--c4bg); border-left: 6px solid var(--c4); }
+  .extra { display: grid; gap: 8px; }
+  .extra .core { padding: 8px 12px; font-size: .95rem; }
+
+  ul.points { padding-left: 1.2em; margin: 8px 0; }
+  ul.points li { margin: 4px 0; }
+
+  /* 表 */
+  .tbl { overflow-x: auto; margin: 10px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; min-width: 460px; }
+  th, td { border: 1px solid var(--line); padding: 8px 6px; text-align: center; vertical-align: middle; }
+  th { background: #f3efe8; font-weight: 700; }
+  td.scene, th.scene { text-align: left; min-width: 9em; }
+  td .sm { display: block; font-size: .78rem; color: var(--sub); line-height: 1.4; }
+  .o { color: var(--ok); font-weight: 700; font-size: 1.15em; }
+  .t { color: var(--mid); font-weight: 700; font-size: 1.15em; }
+  .x { color: var(--ng); font-weight: 700; font-size: 1.15em; }
+  .legend { font-size: .85rem; color: var(--sub); }
+
+  /* 例文 */
+  .ex { border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 10px 0; }
+  .ex .ko { display: block; font-size: 1.2em; font-weight: 700; line-height: 1.7; }
+  .ex .ja { display: block; font-size: .95rem; margin-top: 2px; }
+  .ex .mark { font-weight: 700; margin-right: 6px; }
+  .cmpset { margin: 18px 0 22px; }
+  .cmpset > h3 { margin-top: 0; }
+
+  .judge { display: grid; gap: 8px; margin: 14px 0 18px; }
+  .judge .row { display: grid; grid-template-columns: 2em 1fr; gap: 6px; align-items: baseline; }
+  .judge .row .ko { font-size: 1.15em; font-weight: 700; }
+  .judge .row.ng .ko { color: #9a938a; }
+  .judge .why { font-size: .93rem; background: #f6f3ee; border-radius: 8px; padding: 8px 12px; }
+  .judge .scene { font-size: .9rem; color: var(--sub); }
+
+  .column { background: #f6f3ee; border-radius: 8px; padding: 12px 14px; margin-top: 16px; font-size: .95rem; }
+  .column .head { font-weight: 700; }
+
+  /* 会話 */
+  .dialog { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 14px 0; }
+  .dialog .title { font-weight: 700; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .dialog .line { display: grid; grid-template-columns: 3.6em 1fr; gap: 4px 8px; padding: 6px 0; border-top: 1px dashed var(--line); }
+  .dialog .line:first-of-type { border-top: none; }
+  .dialog .who { font-weight: 700; color: var(--sub); font-size: .9rem; padding-top: .2em; }
+  .dialog .ko { display: block; }
+  .dialog .tr { display: block; color: var(--sub); font-size: .9rem; }
+  .dialog.hide-tr .tr { visibility: hidden; }
+  .dialog .memo { font-size: .88rem; color: var(--sub); margin-top: 8px; }
+  button.small {
+    font: inherit; font-size: .8rem; padding: 2px 10px; border-radius: 999px;
+    border: 1px solid var(--line); background: #fff; color: var(--sub); cursor: pointer; white-space: nowrap;
+  }
+
+  /* 練習問題 */
+  .q { border-top: 1px dashed var(--line); padding: 14px 0; }
+  .q:first-of-type { border-top: none; }
+  .q .qtext { font-weight: 700; }
+  .q .qtext .ko { font-weight: 700; }
+  .q .scene { font-size: .9rem; color: var(--sub); display: block; font-weight: 400; }
+  .opts { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+  .opts button {
+    font-family: "Noto Sans KR", sans-serif; font-size: 1.05rem; font-weight: 700;
+    padding: 8px 16px; border-radius: 10px; border: 2px solid var(--line);
+    background: #fff; color: var(--ink); cursor: pointer; min-width: 6em;
+  }
+  .opts button:hover { border-color: #bdb4a6; }
+  .opts button.right { border-color: var(--ok); background: #e6f3eb; }
+  .opts button.wrong { border-color: var(--ng); background: #fbe9e7; }
+  .q.done .opts button { cursor: default; }
+  .fb { background: #f6f3ee; border-radius: 8px; padding: 10px 12px; margin-top: 8px; font-size: .95rem; }
+  .fb .res { font-weight: 700; display: block; }
+  .score { text-align: right; font-weight: 700; margin: 6px 0 0; }
+
+  /* 図(流れ・比喩) */
+  .flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 12px 0; }
+  .flow .box {
+    border: 2px solid currentColor; border-radius: 8px; padding: 2px 10px; background: #fff;
+    font-family: "Noto Sans KR", sans-serif; font-weight: 700;
+  }
+  .flow .arrow { color: var(--sub); font-weight: 700; }
+  .flow .cut { color: var(--sub); font-size: .85rem; border: 1px dashed var(--sub); border-radius: 6px; padding: 0 6px; }
+  .flow .res { width: 100%; text-align: center; }
+  .film { display: grid; gap: 10px; margin: 12px 0; }
+  .film .core p { margin-top: 2px; }
+
+  /* まとめ */
+  table.sum { min-width: 0; font-size: .86rem; }
+  .sum th, .sum td { text-align: left; padding: 8px 5px; }
+  .sum td:first-child, .sum th:first-child { width: 4.2em; }
+  .film .flow { gap: 4px; flex-wrap: nowrap; }
+  .film .flow .box { font-size: .85rem; padding: 2px 6px; white-space: nowrap; }
+  .film .flow .cut { white-space: nowrap; }
+
+  footer { color: var(--sub); font-size: .8rem; text-align: center; padding: 8px 0 40px; }
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap">
+    <p class="series">似ている表現の使い分け 03</p>
+    <h1><span class="ko k1">Ⅰ-고</span> と <span class="ko k2">Ⅲ-서</span></h1>
+    <p class="sub">どちらも「〜して」。動作がつながっているかどうか|『新・韓国語へのとびら』14-A</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 1. 導入 -->
+  <section>
+    <h2><span class="num">1</span>日本語なら、どちらも「〜して」</h2>
+    <p>週末のことを話すとき、日本語では次のように言います。</p>
+    <p>「晩ごはんを食べ<strong>て</strong>、宿題をしました」<br>「駅で会っ<strong>て</strong>、一緒に行きました」</p>
+    <p>どちらも「〜して」です。でも韓国語では、この2つを違う形で言います。</p>
+    <div class="big">
+      <span class="ko">저녁을 <b class="k1">먹고</b> 숙제를 했어요.</span>
+      <span class="ko">역에서 <b class="k2">만나서</b> 같이 갔어요.</span>
+    </div>
+    <p>違いは、前の動作と後ろの動作が<strong>つながっているかどうか</strong>です。このページでは、色を次のようにそろえています。</p>
+    <p><span class="chip k1">Ⅰ-고</span> <span class="chip k2">Ⅲ-서</span></p>
+  </section>
+
+  <!-- 2. ひとことで -->
+  <section>
+    <h2><span class="num">2</span>ひとことで言うと</h2>
+    <div class="core b1">
+      <span class="head"><span class="ko k1">Ⅰ-고</span> → 前後は<strong>独立した動作</strong> 📦 → 📦</span>
+      <p>「Aをして(それはそれで終わり)、次にBをする」。別々のこと。</p>
+    </div>
+    <div class="core b2">
+      <span class="head"><span class="ko k2">Ⅲ-서</span> → 前後は<strong>つながった一連の動作</strong> 🔗🔗</span>
+      <p>前の動作の結果が残ったまま、後ろの動作をする。2つで1つの行動。</p>
+    </div>
+
+    <div class="flow k1">
+      <span class="box">숙제를 하다</span><span class="arrow">📦 →</span><span class="box">자다</span><span class="arrow">📦</span>
+      <span class="res ko">숙제를 <b>하고</b> 잤어요.</span>
+    </div>
+    <div class="flow k2">
+      <span class="box">한국에 가다</span><span class="arrow">🔗🔗</span><span class="box">쇼핑하다</span>
+      <span class="res ko">한국에 <b>가서</b> 쇼핑하고 싶어요.</span>
+    </div>
+    <p class="note">韓国に「行った」結果(韓国にいる状態)が残ったまま、そこでショッピングをします。宿題と寝ることは、それぞれ別の動作です。</p>
+
+    <h3>🎬 映画の撮影にたとえると</h3>
+    <div class="film">
+      <div class="core b1">
+        <span class="head"><span class="ko k1">Ⅰ-고</span>:シーン1を撮影 → カメラを止める → シーン2を撮影</span>
+        <div class="flow k1"><span class="box">🎬 シーン1</span><span class="cut">✂ カット</span><span class="box">🎬 シーン2</span></div>
+        <p>2つの独立したシーンです。結びつきは弱く、「1つ終わって切り替える」感じがあります。</p>
+      </div>
+      <div class="core b2">
+        <span class="head"><span class="ko k2">Ⅲ-서</span>:カメラを止めずに続けて撮る</span>
+        <div class="flow k2"><span class="box">🎬 シーン1 ━━ シーン2</span></div>
+        <p>ひと続きの場面です。結びつきが強く、2つで1つの行動になります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 形の作り方 -->
+  <section>
+    <h2><span class="num">3</span>形の作り方</h2>
+    <p><span class="ko k1">고</span> は<strong>活用形Ⅰ</strong>に、<span class="ko k2">서</span> は<strong>活用形Ⅲ</strong>に付きます。</p>
+    <div class="tbl">
+      <table>
+        <tr><th>基本形</th><th class="k1">Ⅰ-고</th><th class="k2">Ⅲ-서</th></tr>
+        <tr><td><span class="ko">가다</span><span class="sm">Ⅰ-가 / Ⅲ-가</span></td><td class="ko">가고</td><td class="ko">가서</td></tr>
+        <tr><td><span class="ko">먹다</span><span class="sm">Ⅰ-먹 / Ⅲ-먹어</span></td><td class="ko">먹고</td><td class="ko">먹어서</td></tr>
+        <tr><td><span class="ko">만나다</span><span class="sm">Ⅰ-만나 / Ⅲ-만나</span></td><td class="ko">만나고</td><td class="ko">만나서</td></tr>
+        <tr><td><span class="ko">앉다</span><span class="sm">Ⅰ-앉 / Ⅲ-앉아</span></td><td class="ko">앉고</td><td class="ko">앉아서</td></tr>
+        <tr><td><span class="ko">하다</span><span class="sm">Ⅰ-하 / Ⅲ-해</span></td><td class="ko">하고</td><td class="ko">해서</td></tr>
+        <tr><td><span class="ko">듣다</span><span class="sm">ㄷ変則 Ⅲ-들어</span></td><td class="ko">듣고</td><td class="ko">들어서</td></tr>
+      </table>
+    </div>
+    <ul class="points note">
+      <li><span class="ko k2">Ⅲ-서</span> の前には過去の <span class="ko">-았/었-</span> を付けません。過去のことでも <span class="ko">가서 샀어요</span> のように、文末だけ過去形にします(<span class="ko">×갔어서</span>)。</li>
+      <li><span class="ko k2">Ⅲ-서</span> でつなぐとき、前後の動作をする人は同じです。</li>
+    </ul>
+  </section>
+
+  <!-- 4. 比較表 -->
+  <section>
+    <h2><span class="num">4</span>どんな場面で使う?</h2>
+    <div class="tbl">
+      <table>
+        <tr><th class="scene">場面</th><th class="k1 ko">Ⅰ-고</th><th class="k2 ko">Ⅲ-서</th></tr>
+        <tr><td class="scene">別々の動作を順番にする<span class="sm">宿題をする → 寝る</span></td><td class="o">○</td><td class="x">×</td></tr>
+        <tr><td class="scene">移動して、その場所で何かする<span class="sm">学校に行く → 勉強する</span></td><td class="t">△</td><td class="o">○</td></tr>
+        <tr><td class="scene">人に会って、その人と何かする</td><td class="t">△</td><td class="o">○</td></tr>
+        <tr><td class="scene">作った・買ったものを使って何かする<span class="sm">パンを買う → 食べる</span></td><td class="t">△</td><td class="o">○</td></tr>
+        <tr><td class="scene">座る・立つなど、姿勢を変えてから</td><td class="t">△</td><td class="o">○</td></tr>
+        <tr><td class="scene">服を着る・靴をはく・帽子をかぶってから</td><td class="o">○</td><td class="x">×</td></tr>
+      </table>
+    </div>
+    <p class="legend"><span class="o">○</span> 自然 <span class="t">△</span> 場面によっては使える・少し不自然 <span class="x">×</span> 使わない</p>
+    <p class="note">着る・はく・かぶる(<span class="ko">입다・신다・쓰다</span>)は、身につけたまま動いても <span class="ko k1">Ⅰ-고</span> を使います。<span class="ko">코트를 입고 나갔어요</span>(コートを着て出かけました)。</p>
+  </section>
+
+  <!-- 5. 同じ文で比べる -->
+  <section>
+    <h2><span class="num">5</span>同じ文で比べてみよう</h2>
+
+    <div class="cmpset">
+      <h3>① 友達と映画</h3>
+      <div class="ex b1"><span class="ko">친구를 <span class="k1">만나고</span> 영화를 봤어요.</span>
+        <span class="ja">友達に会って(その用事は終わり)、それから映画を見ました。映画は一人で見たのかもしれません。シーンが2つあります。</span></div>
+      <div class="ex b2"><span class="ko">친구를 <span class="k2">만나서</span> 영화를 봤어요.</span>
+        <span class="ja">友達に会って、その友達と一緒に映画を見ました。会ったところから映画までが、ひと続きの場面です。</span></div>
+    </div>
+
+    <div class="cmpset">
+      <h3>② ケーキを作って</h3>
+      <div class="ex b1"><span class="ko">케이크를 <span class="k1">만들고</span> 친구한테 연락했어요.</span>
+        <span class="ja">ケーキを作り終えて、それから友達に連絡しました。作ることと連絡することは別々の動作です。</span></div>
+      <div class="ex b2"><span class="ko">케이크를 <span class="k2">만들어서</span> 친구한테 줬어요.</span>
+        <span class="ja">ケーキを作って、<strong>そのケーキを</strong>友達にあげました。作ったものが次の動作につながっています。</span></div>
+    </div>
+
+    <div class="cmpset">
+      <h3>③ 1つの文に両方入ることも</h3>
+      <div class="ex b3"><span class="ko">수업이 <span class="k1">끝나고</span> 집에 <span class="k2">가서</span> 바로 잤어요.</span>
+        <span class="ja">授業が終わって(📦 ここで区切り)、家に帰って(🔗 そのまま家で)すぐ寝ました。「家に帰る」と「寝る」はつながっています。</span></div>
+    </div>
+  </section>
+
+  <!-- 6. 片方だけが自然 -->
+  <section>
+    <h2><span class="num">6</span>片方だけが自然な例</h2>
+
+    <div class="judge">
+      <div class="row"><span class="o">○</span><span class="ko">학교에 <span class="k2">가서</span> 공부해요.</span></div>
+      <div class="row ng"><span class="t">△</span><span class="ko">학교에 가고 공부해요.</span></div>
+      <div class="why">学校に「行って、学校で」勉強します。移動した先での行動は <span class="ko k2">Ⅲ-서</span> です。</div>
+    </div>
+
+    <div class="judge">
+      <div class="row"><span class="o">○</span><span class="ko">저녁을 <span class="k1">먹고</span> 숙제를 했어요.</span></div>
+      <div class="row ng"><span class="t">△</span><span class="ko">저녁을 먹어서 숙제를 했어요.</span></div>
+      <div class="why">食べることと宿題は別々の動作です。<span class="ko">먹어서</span> だと「食べたので宿題をした」と理由のように聞こえてしまいます。</div>
+    </div>
+
+    <div class="judge">
+      <div class="row"><span class="o">○</span><span class="ko">코트를 <span class="k1">입고</span> 나갔어요.</span></div>
+      <div class="row ng"><span class="x">×</span><span class="ko">코트를 입어서 나갔어요.</span></div>
+      <div class="why">着る・はく・かぶるは <span class="ko k1">Ⅰ-고</span> です。<span class="ko">입어서</span> だと「着たので出かけた」という理由の意味になります。</div>
+    </div>
+
+    <div class="judge">
+      <div class="row"><span class="o">○</span><span class="ko">의자에 <span class="k2">앉아서</span> 기다렸어요.</span></div>
+      <div class="row ng"><span class="t">△</span><span class="ko">의자에 앉고 기다렸어요.</span></div>
+      <div class="why">「座った状態のまま」待っています。座った結果が残っているので <span class="ko k2">Ⅲ-서</span> です。</div>
+    </div>
+
+    <div class="judge">
+      <div class="row"><span class="o">○</span><span class="ko">편의점에서 김밥을 <span class="k2">사서</span> 먹었어요.</span></div>
+      <div class="row ng"><span class="t">△</span><span class="ko">편의점에서 김밥을 사고 먹었어요.</span></div>
+      <div class="why">買った<strong>そのキンパ</strong>を食べています。手に入れたものを使う動作は <span class="ko k2">Ⅲ-서</span> でつなぎます。</div>
+    </div>
+  </section>
+
+  <!-- 7. 会話 -->
+  <section>
+    <h2><span class="num">7</span>短い会話</h2>
+
+    <div class="dialog">
+      <div class="title"><span>会話1 週末どうだった?</span><button class="small" type="button">訳を隠す</button></div>
+      <div class="line"><span class="who">ジウ</span><div><span class="ko">주말에 뭐 했어요?</span><span class="tr">週末何してたの?</span></div></div>
+      <div class="line"><span class="who">ソラ</span><div><span class="ko">친구를 <b class="k2">만나서</b> 성수동에 갔어요.</span><span class="tr">友達に会って、ソンスドンに行きました。</span></div></div>
+      <div class="line"><span class="who">ジウ</span><div><span class="ko">오, 성수동 요즘 핫하잖아요! 뭐 했어요?</span><span class="tr">おお、ソンスドン最近人気だよね!何したの?</span></div></div>
+      <div class="line"><span class="who">ソラ</span><div><span class="ko">팝업 스토어 <b class="k1">구경하고</b> 카페에 <b class="k2">가서</b> 케이크 먹었어요.</span><span class="tr">ポップアップストアを見て、カフェに行ってケーキを食べました。</span></div></div>
+      <div class="line"><span class="who">ジウ</span><div><span class="ko">부럽다…. 저는 과제 <b class="k1">하고</b> 바로 잤어요.</span><span class="tr">うらやましい…。私は課題をして、すぐ寝ました。</span></div></div>
+      <p class="memo">友達と会って一緒に行ったので <span class="ko k2">만나서</span>、カフェに行ってそこで食べたので <span class="ko k2">가서</span>。見物と課題は「1つ終わって次へ」なので <span class="ko k1">Ⅰ-고</span> です。</p>
+    </div>
+
+    <div class="dialog">
+      <div class="title"><span>会話2 待ち合わせの相談</span><button class="small" type="button">訳を隠す</button></div>
+      <div class="line"><span class="who">ハル</span><div><span class="ko">내일 몇 시에 만날까요?</span><span class="tr">明日何時に会いましょうか?</span></div></div>
+      <div class="line"><span class="who">ミナ</span><div><span class="ko">열두 시에 학교 앞에서 <b class="k2">만나서</b> 같이 가요.</span><span class="tr">12時に学校の前で会って、一緒に行きましょう。</span></div></div>
+      <div class="line"><span class="who">ハル</span><div><span class="ko">좋아요. 그럼 점심 <b class="k1">먹고</b> 영화 볼까요?</span><span class="tr">いいですね。じゃあお昼を食べて、映画を見ましょうか?</span></div></div>
+      <div class="line"><span class="who">ミナ</span><div><span class="ko">네! 영화 <b class="k1">보고</b> 나서 노래방도 가요.</span><span class="tr">はい!映画を見たあと、カラオケにも行きましょう。</span></div></div>
+      <p class="memo">会ってそのまま一緒に移動するので <span class="ko k2">만나서</span>。お昼、映画、カラオケはシーンを切り替えながら進むので <span class="ko k1">Ⅰ-고</span> です。<span class="ko">Ⅰ-고 나서</span> は「〜し終わってから」と区切りをはっきりさせる言い方です。</p>
+    </div>
+  </section>
+
+  <!-- 8. まとめ -->
+  <section>
+    <h2><span class="num">8</span>まとめ</h2>
+    <div class="tbl">
+      <table class="sum">
+        <tr><th></th><th class="k1 ko">Ⅰ-고</th><th class="k2 ko">Ⅲ-서</th></tr>
+        <tr><td>前後の関係</td><td><strong>独立</strong>した動作 📦 → 📦</td><td><strong>一連</strong>の動作 🔗🔗</td></tr>
+        <tr><td>結びつき</td><td>弱い(完了・切り替え)</td><td>強い(2つで1つの行動)</td></tr>
+        <tr><td>撮影なら</td><td>カメラを止めて次のシーン</td><td>カメラを止めずに続けて撮る</td></tr>
+        <tr><td>例</td><td class="ko">저녁을 먹고 숙제를 했어요.</td><td class="ko">한국에 가서 쇼핑하고 싶어요.</td></tr>
+      </table>
+    </div>
+    <p class="note">迷ったら「前の動作の結果が、後ろの動作まで残っているか」を考えます。残っていれば <span class="ko k2">Ⅲ-서</span> です。</p>
+  </section>
+
+  <!-- 9. 練習問題 -->
+  <section id="quiz">
+    <h2><span class="num">9</span>練習問題</h2>
+    <p class="note">自然なほうを押してください。正解と解説が出ます。</p>
+
+    <div class="q" data-answer="가서">
+      <p class="qtext">Q1. <span class="ko">도서관에 ( ? ) 책을 빌렸어요.</span></p>
+      <div class="opts"><button type="button" data-v="가고">가고</button><button type="button" data-v="가서">가서</button></div>
+      <div class="fb" hidden><span class="res"></span>図書館に行って、<strong>図書館で</strong>本を借りました。移動先での行動なので <span class="ko k2">Ⅲ-서</span> です。</div>
+    </div>
+
+    <div class="q" data-answer="하고">
+      <p class="qtext">Q2. <span class="ko">샤워를 ( ? ) 바로 잤어요.</span></p>
+      <div class="opts"><button type="button" data-v="하고">하고</button><button type="button" data-v="해서">해서</button></div>
+      <div class="fb" hidden><span class="res"></span>シャワーと寝ることは別々の動作です。<span class="ko">해서</span> だと「シャワーをしたので寝た」と理由に聞こえます。</div>
+    </div>
+
+    <div class="q" data-answer="신고">
+      <p class="qtext">Q3. <span class="ko">새 운동화를 ( ? ) 산책했어요.</span></p>
+      <div class="opts"><button type="button" data-v="신어서">신어서</button><button type="button" data-v="신고">신고</button></div>
+      <div class="fb" hidden><span class="res"></span>着る・はく・かぶるは <span class="ko k1">Ⅰ-고</span> を使います。</div>
+    </div>
+
+    <div class="q" data-answer="만나서">
+      <p class="qtext">Q4. <span class="ko">수업 끝나고 친구를 ( ? ) 같이 저녁을 먹었어요.</span></p>
+      <div class="opts"><button type="button" data-v="만나고">만나고</button><button type="button" data-v="만나서">만나서</button></div>
+      <div class="fb" hidden><span class="res"></span>会ったその友達と一緒に食べています。ひと続きの場面なので <span class="ko k2">Ⅲ-서</span> です。</div>
+    </div>
+
+    <div class="q" data-answer="만들어서">
+      <p class="qtext">Q5. <span class="ko">떡볶이를 ( ? ) 친구들이랑 나눠 먹었어요.</span></p>
+      <div class="opts"><button type="button" data-v="만들어서">만들어서</button><button type="button" data-v="만들고">만들고</button></div>
+      <div class="fb" hidden><span class="res"></span>作った<strong>そのトッポッキ</strong>を分けて食べています。作ったものが次の動作につながるので <span class="ko k2">Ⅲ-서</span> です。</div>
+    </div>
+
+    <p class="score" aria-live="polite"></p>
+    <p style="text-align:right"><button class="small" type="button" id="reset">もう一度解く</button></p>
+  </section>
+
+</main>
+
+<footer>似ている表現の使い分け 03|韓国語初級</footer>
+
+<script>
+  // 練習問題
+  const qs = document.querySelectorAll('.q');
+  const scoreEl = document.querySelector('.score');
+  function updateScore() {
+    const done = document.querySelectorAll('.q.done').length;
+    const right = document.querySelectorAll('.q.correct').length;
+    scoreEl.textContent = done ? `正解 ${right} / ${qs.length}` : '';
+  }
+  qs.forEach(q => {
+    const ans = q.dataset.answer;
+    q.querySelectorAll('.opts button').forEach(b => {
+      b.addEventListener('click', () => {
+        if (q.classList.contains('done')) return;
+        q.classList.add('done');
+        const ok = b.dataset.v === ans;
+        if (ok) q.classList.add('correct');
+        q.querySelectorAll('.opts button').forEach(x => {
+          if (x.dataset.v === ans) x.classList.add('right');
+        });
+        if (!ok) b.classList.add('wrong');
+        const fb = q.querySelector('.fb');
+        fb.querySelector('.res').textContent = ok ? '○ 正解です!' : `もう一歩!正解は「${ans}」です。`;
+        fb.hidden = false;
+        updateScore();
+      });
+    });
+  });
+  document.getElementById('reset').addEventListener('click', () => {
+    qs.forEach(q => {
+      q.classList.remove('done', 'correct');
+      q.querySelectorAll('.opts button').forEach(x => x.classList.remove('right', 'wrong'));
+      q.querySelector('.fb').hidden = true;
+    });
+    updateScore();
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // 会話の訳の表示・非表示
+  document.querySelectorAll('.dialog .small').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const d = btn.closest('.dialog');
+      d.classList.toggle('hide-tr');
+      btn.textContent = d.classList.contains('hide-tr') ? '訳を表示' : '訳を隠す';
+    });
+  });
+</script>
+</body>
+</html>

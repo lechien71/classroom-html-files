@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>그と저|似ている表現の使い分け 07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== シリーズ共通デザイン(似ている表現の使い分け) ===== */
+  :root {
+    --bg: #faf8f4;
+    --card: #ffffff;
+    --ink: #2b2b2b;
+    --sub: #6b655e;
+    --line: #e6dfd3;
+    --band: #222222;
+    /* 比べる表現の色(ページごとに意味を決めて、全体でそろえる) */
+    --c1: #c9620a; --c1bg: #fdf0e2;   /* オレンジ */
+    --c2: #2a64a8; --c2bg: #e8f0fa;   /* 青 */
+    --c3: #2b8152; --c3bg: #e6f3eb;   /* 緑 */
+    --c4: #7a4bab; --c4bg: #f2ebf8;   /* 紫 */
+    --ok: #2b8152; --mid: #b07a12; --ng: #b8382c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .ko {
+    font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+    font-size: 1.12em;
+    font-weight: 500;
+  }
+  b.ko, .ko b, strong.ko { font-weight: 700; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+  header.band { background: var(--band); color: #fff; padding: 28px 0 24px; }
+  header .series { margin: 0; font-size: .85rem; color: #cfc9c0; letter-spacing: .05em; }
+  header h1 { margin: 6px 0 6px; font-size: 1.5rem; line-height: 1.5; }
+  header h1 .ko { font-size: 1.05em; font-weight: 700; }
+  header .sub { margin: 0; font-size: .9rem; color: #e4ded5; }
+  header .k1 { color: #ffa65c; } header .k2 { color: #8fbcf2; }
+  header .k3 { color: #8fd6ab; } header .k4 { color: #c9a6ee; }
+
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 18px;
+    margin: 20px 0;
+  }
+  h2 { font-size: 1.15rem; margin: 0 0 12px; line-height: 1.5; }
+  h2 .num {
+    display: inline-block; background: var(--band); color: #fff;
+    border-radius: 6px; padding: 0 8px; margin-right: 8px; font-size: .85rem;
+  }
+  h3 { font-size: 1rem; margin: 18px 0 6px; }
+  p { margin: 8px 0; }
+  .note { color: var(--sub); font-size: .9rem; }
+
+  /* 色 */
+  .k1 { color: var(--c1); } .k2 { color: var(--c2); } .k3 { color: var(--c3); } .k4 { color: var(--c4); }
+  .chip {
+    display: inline-block; border-radius: 999px; padding: 0 10px; margin: 2px 2px 2px 0;
+    color: #fff; font-weight: 700; font-size: .95em; line-height: 1.8;
+  }
+  .chip.k1 { background: var(--c1); } .chip.k2 { background: var(--c2); }
+  .chip.k3 { background: var(--c3); } .chip.k4 { background: var(--c4); }
+
+  /* 見本の文 */
+  .big { text-align: center; margin: 14px 0; }
+  .big .ko { display: block; font-size: 1.35em; font-weight: 700; }
+
+  /* ひとことで言うと */
+  .core { border-radius: 8px; padding: 12px 14px; margin: 10px 0; }
+  .core .head { font-weight: 700; }
+  .core p { margin: 4px 0 0; }
+  .b1 { background: var(--c1bg); border-left: 6px solid var(--c1); }
+  .b2 { background: var(--c2bg); border-left: 6px solid var(--c2); }
+  .b3 { background: var(--c3bg); border-left: 6px solid var(--c3); }
+  .b4 { background: var(--c4bg); border-left: 6px solid var(--c4); }
+  .extra { display: grid; gap: 8px; }
+  .extra .core { padding: 8px 12px; font-size: .95rem; }
+
+  ul.points { padding-left: 1.2em; margin: 8px 0; }
+  ul.points li { margin: 4px 0; }
+
+  /* 表 */
+  .tbl { overflow-x: auto; margin: 10px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; min-width: 460px; }
+  th, td { border: 1px solid var(--line); padding: 8px 6px; text-align: center; vertical-align: middle; }
+  th { background: #f3efe8; font-weight: 700; }
+  td.scene, th.scene { text-align: left; min-width: 9em; }
+  td .sm { display: block; font-size: .78rem; color: var(--sub); line-height: 1.4; }
+  .o { color: var(--ok); font-weight: 700; font-size: 1.15em; }
+  .t { color: var(--mid); font-weight: 700; font-size: 1.15em; }
+  .x { color: var(--ng); font-weight: 700; font-size: 1.15em; }
+  .legend { font-size: .85rem; color: var(--sub); }
+
+  /* 例文 */
+  .ex { border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 10px 0; }
+  .ex .ko { display: block; font-size: 1.2em; font-weight: 700; line-height: 1.7; }
+  .ex .ja { display: block; font-size: .95rem; margin-top: 2px; }
+  .ex .mark { font-weight: 700; margin-right: 6px; }
+  .cmpset { margin: 18px 0 22px; }
+  .cmpset > h3 { margin-top: 0; }
+
+  .judge { display: grid; gap: 8px; margin: 14px 0 18px; }
+  .judge .row { display: grid; grid-template-columns: 2em 1fr; gap: 6px; align-items: baseline; }
+  .judge .row .ko { font-size: 1.15em; font-weight: 700; }
+  .judge .row.ng .ko { color: #9a938a; }
+  .judge .why { font-size: .93rem; background: #f6f3ee; border-radius: 8px; padding: 8px 12px; }
+  .judge .scene { font-size: .9rem; color: var(--sub); }
+
+  .column { background: #f6f3ee; border-radius: 8px; padding: 12px 14px; margin-top: 16px; font-size: .95rem; }
+  .column .head { font-weight: 700; }
+
+  /* 会話 */
+  .dialog { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 14px 0; }
+  .dialog .title { font-weight: 700; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .dialog .line { display: grid; grid-template-columns: 3.6em 1fr; gap: 4px 8px; padding: 6px 0; border-top: 1px dashed var(--line); }
+  .dialog .line:first-of-type { border-top: none; }
+  .dialog .who { font-weight: 700; color: var(--sub); font-size: .9rem; padding-top: .2em; }
+  .dialog .ko { display: block; }
+  .dialog .tr { display: block; color: var(--sub); font-size: .9rem; }
+  .dialog.hide-tr .tr { visibility: hidden; }
+  .dialog .memo { font-size: .88rem; color: var(--sub); margin-top: 8px; }
+  button.small {
+    font: inherit; font-size: .8rem; padding: 2px 10px; border-radius: 999px;
+    border: 1px solid var(--line); background: #fff; color: var(--sub); cursor: pointer; white-space: nowrap;
+  }
+
+  /* 練習問題 */
+  .q { border-top: 1px dashed var(--line); padding: 14px 0; }
+  .q:first-of-type { border-top: none; }
+  .q .qtext { font-weight: 700; }
+  .q .qtext .ko { font-weight: 700; }
+  .q .scene { font-size: .9rem; color: var(--sub); display: block; font-weight: 400; }
+  .opts { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+  .opts button {
+    font-family: "Noto Sans KR", sans-serif; font-size: 1.05rem; font-weight: 700;
+    padding: 8px 16px; border-radius: 10px; border: 2px solid var(--line);
+    background: #fff; color: var(--ink); cursor: pointer; min-width: 6em;
+  }
+  .opts button:hover { border-color: #bdb4a6; }
+  .opts button.right { border-color: var(--ok); background: #e6f3eb; }
+  .opts button.wrong { border-color: var(--ng); background: #fbe9e7; }
+  .q.done .opts button { cursor: default; }
+  .fb { background: #f6f3ee; border-radius: 8px; padding: 10px 12px; margin-top: 8px; font-size: .95rem; }
+  .fb .res { font-weight: 700; display: block; }
+  .score { text-align: right; font-weight: 700; margin: 6px 0 0; }
+
+  /* 図(流れ・比喩) */
+  .flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 12px 0; }
+  .flow .box {
+    border: 2px solid currentColor; border-radius: 8px; padding: 2px 10px; background: #fff;
+    font-family: "Noto Sans KR", sans-serif; font-weight: 700;
+  }
+  .flow .arrow { color: var(--sub); font-weight: 700; }
+  .flow .cut { color: var(--sub); font-size: .85rem; border: 1px dashed var(--sub); border-radius: 6px; padding: 0 6px; }
+  .flow .res { width: 100%; text-align: center; }
+  .film { display: grid; gap: 10px; margin: 12px 0; }
+  .film .core p { margin-top: 2px; }
+
+  /* まとめ */
+  table.sum { min-width: 0; font-size: .86rem; }
+  .sum th, .sum td { text-align: left; padding: 8px 5px; }
+  .sum td:first-child, .sum th:first-child { width: 4.2em; }
+  .film .flow { gap: 4px; flex-wrap: nowrap; }
+  .film .flow .box { font-size: .85rem; padding: 2px 6px; white-space: nowrap; }
+  .film .flow .cut { white-space: nowrap; }
+
+  footer { color: var(--sub); font-size: .8rem; text-align: center; padding: 8px 0 40px; }
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap">
+    <p class="series">似ている表現の使い分け 07</p>
+    <h1><span class="ko k1">그</span> と <span class="ko k2">저</span></h1>
+    <p class="sub">日本語の「あの」が、韓国語では「그」になるとき|『新・韓国語へのとびら』02-A</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 1. 導入 -->
+  <section>
+    <h2><span class="num">1</span>「あの店」は 저 가게?</h2>
+    <p>「こ・そ・あ」は、韓国語の「이・그・저」とよく対応します。この=<span class="ko">이</span>、その=<span class="ko">그</span>、あの=<span class="ko">저</span> です。</p>
+    <p>では、友達に「昨日行った<strong>あの店</strong>、おいしかったね」と言うときは、どれを使えばよいか考えてみましょう。</p>
+    <div class="big">
+      <span class="ko">어제 간 <b class="k1">그</b> 가게 맛있었지요?</span>
+    </div>
+    <p>答えは <b class="ko k1">그</b> です。日本語では「あの」なのに、韓国語では <span class="ko">저</span> ではなく <span class="ko">그</span> を使います。その理由を見ていきましょう。色は次のようにそろえています。</p>
+    <p><span class="chip k3">이</span> <span class="chip k1">그</span> <span class="chip k2">저</span></p>
+  </section>
+
+  <!-- 2. ひとことで -->
+  <section>
+    <h2><span class="num">2</span>ひとことで言うと</h2>
+    <div class="core b2">
+      <span class="head"><span class="ko k2">저</span> → 目の前に<strong>見えている</strong>もの</span>
+      <p>話し手からも聞き手からも離れていて、指させるもの。「(あそこに見える)あれ」。</p>
+    </div>
+    <div class="core b1">
+      <span class="head"><span class="ko k1">그</span> → 聞き手の近くのもの・<strong>見えていない</strong>もの</span>
+      <p>話の中に出てきたもの、2人の記憶の中にあるもの。「(さっき話した/前に行った)あの・その」。</p>
+    </div>
+    <ul class="points">
+      <li>日本語の「あの」は、2人が知っている思い出のものにも使います。韓国語では、<strong>今見えていなければ</strong> <span class="ko k1">그</span> です。</li>
+      <li>話題に出た人も <span class="ko k1">그 사람</span> です。目の前にいて指させるときだけ <span class="ko k2">저 사람</span> になります。</li>
+      <li>名前が出てこないときの「あれ、なんだっけ」も <span class="ko k1">그거 뭐더라?</span> です。会話でとてもよく使います。</li>
+    </ul>
+  </section>
+
+  <!-- 3. 形の一覧 -->
+  <section>
+    <h2><span class="num">3</span>形の一覧</h2>
+    <div class="tbl">
+      <table>
+        <tr><th></th><th class="k3">이(こ)</th><th class="k1">그(そ)</th><th class="k2">저(あ)</th><th>어느(ど)</th></tr>
+        <tr><td>〜の(連体詞)</td><td class="ko">이</td><td class="ko">그</td><td class="ko">저</td><td class="ko">어느</td></tr>
+        <tr><td>もの(会話)</td><td class="ko">이거</td><td class="ko">그거</td><td class="ko">저거</td><td class="ko">어느 거</td></tr>
+        <tr><td>場所</td><td class="ko">여기</td><td class="ko">거기</td><td class="ko">저기</td><td class="ko">어디</td></tr>
+        <tr><td>人</td><td class="ko">이 사람</td><td class="ko">그 사람</td><td class="ko">저 사람</td><td class="ko">누구</td></tr>
+        <tr><td>様子</td><td class="ko">이렇게</td><td class="ko">그렇게</td><td class="ko">저렇게</td><td class="ko">어떻게</td></tr>
+      </table>
+    </div>
+    <p class="note">会話では <span class="ko">이것・그것・저것</span> が縮まって <span class="ko">이거・그거・저거</span> になります。「〜は」が付くと <span class="ko">그건</span>、「〜が」が付くと <span class="ko">그게</span> です。</p>
+  </section>
+
+  <!-- 4. 比較表 -->
+  <section>
+    <h2><span class="num">4</span>どんな場面で使う?</h2>
+    <div class="tbl">
+      <table>
+        <tr><th class="scene">場面</th><th class="k3 ko">이</th><th class="k1 ko">그</th><th class="k2 ko">저</th></tr>
+        <tr><td class="scene">話し手の近くにあるもの</td><td class="o">○</td><td class="x">×</td><td class="x">×</td></tr>
+        <tr><td class="scene">聞き手の近くにあるもの</td><td class="x">×</td><td class="o">○</td><td class="x">×</td></tr>
+        <tr><td class="scene">2人から離れていて、見えるもの</td><td class="x">×</td><td class="x">×</td><td class="o">○</td></tr>
+        <tr><td class="scene">話に出てきたもの・2人の思い出<span class="sm">今は見えていない</span></td><td class="x">×</td><td class="o">○</td><td class="x">×</td></tr>
+        <tr><td class="scene">名前が出てこないもの<span class="sm">「あれ、なんだっけ」</span></td><td class="x">×</td><td class="o">○</td><td class="x">×</td></tr>
+      </table>
+    </div>
+    <p class="legend"><span class="o">○</span> 自然 <span class="x">×</span> 使わない</p>
+  </section>
+
+  <!-- 5. 同じ文で比べる -->
+  <section>
+    <h2><span class="num">5</span>同じ文で比べてみよう</h2>
+
+    <div class="cmpset">
+      <h3>① おいしい店</h3>
+      <div class="ex b2"><span class="ko"><span class="k2">저</span> 가게 맛있어요.</span>
+        <span class="ja">道の向こうに見えている店を指さして「あの店、おいしいですよ」。</span></div>
+      <div class="ex b1"><span class="ko"><span class="k1">그</span> 가게 맛있어요.</span>
+        <span class="ja">話に出てきた店、または2人が知っている店について「あの(その)店、おいしいですよ」。今は見えていません。</span></div>
+    </div>
+
+    <div class="cmpset">
+      <h3>② あの人だれ?</h3>
+      <div class="ex b2"><span class="ko"><span class="k2">저</span> 사람 누구예요?</span>
+        <span class="ja">向こうにいる人を見ながら「あの人、だれですか?」。</span></div>
+      <div class="ex b1"><span class="ko"><span class="k1">그</span> 사람 누구예요?</span>
+        <span class="ja">友達が「昨日すごい人に会ったんだ」と言ったのを受けて「その人ってだれ?」。話の中の人です。</span></div>
+    </div>
+
+    <div class="cmpset">
+      <h3>③ あそこ</h3>
+      <div class="ex b2"><span class="ko"><span class="k2">저기</span> 앉아요.</span>
+        <span class="ja">空いている席を指さして「あそこに座りましょう」。</span></div>
+      <div class="ex b1"><span class="ko">지난번에 간 <span class="k1">거기</span> 어때요?</span>
+        <span class="ja">「この前行ったあそこ、どうですか?」。思い出の中の場所なので <span class="ko k1">거기</span> です。</span></div>
+    </div>
+  </section>
+
+  <!-- 6. 片方だけが自然 -->
+  <section>
+    <h2><span class="num">6</span>片方だけが自然な例</h2>
+
+    <div class="judge">
+      <span class="scene">昨日一緒に行ったカフェの話</span>
+      <div class="row"><span class="o">○</span><span class="ko">어제 간 <span class="k1">그</span> 카페 진짜 좋았지요?</span></div>
+      <div class="row ng"><span class="x">×</span><span class="ko">어제 간 저 카페 진짜 좋았지요?</span></div>
+      <div class="why">日本語なら「あのカフェ」ですが、今見えていない思い出のカフェなので <span class="ko k1">그</span> です。</div>
+    </div>
+
+    <div class="judge">
+      <span class="scene">電話で、相手のいる場所について</span>
+      <div class="row"><span class="o">○</span><span class="ko"><span class="k1">거기</span> 지금 비 와요?</span></div>
+      <div class="row ng"><span class="x">×</span><span class="ko">저기 지금 비 와요?</span></div>
+      <div class="why">電話の相手がいる場所は「聞き手の近く」なので <span class="ko k1">거기</span>(そこ)です。</div>
+    </div>
+
+    <div class="judge">
+      <span class="scene">友達が持っているスマホケースを見て</span>
+      <div class="row"><span class="o">○</span><span class="ko"><span class="k1">그거</span> 어디서 샀어요?</span></div>
+      <div class="row ng"><span class="t">△</span><span class="ko">저거 어디서 샀어요?</span></div>
+      <div class="why">聞き手が手に持っているものは <span class="ko k1">그거</span> です。<span class="ko">저거</span> だと、2人から離れたところにあるものになります。</div>
+    </div>
+
+    <div class="judge">
+      <span class="scene">名前が思い出せない</span>
+      <div class="row"><span class="o">○</span><span class="ko"><span class="k1">그거</span> 뭐더라…. 아, 맞다!</span></div>
+      <div class="row ng"><span class="x">×</span><span class="ko">저거 뭐더라…. 아, 맞다!</span></div>
+      <div class="why">頭の中にあるものを探しているので <span class="ko k1">그거</span> です。</div>
+    </div>
+  </section>
+
+  <!-- 7. 会話 -->
+  <section>
+    <h2><span class="num">7</span>短い会話</h2>
+
+    <div class="dialog">
+      <div class="title"><span>会話1 思い出の店</span><button class="small" type="button">訳を隠す</button></div>
+      <div class="line"><span class="who">ユナ</span><div><span class="ko">지난주에 같이 간 <b class="k1">그</b> 떡볶이집 이름 뭐였지요?</span><span class="tr">先週一緒に行ったあのトッポッキ屋さん、名前なんだっけ?</span></div></div>
+      <div class="line"><span class="who">カイ</span><div><span class="ko">아, <b class="k1">그거</b>…. 뭐더라? 학교 앞에 있는 거요?</span><span class="tr">あ、あれ…。なんだっけ?学校の前にあるやつ?</span></div></div>
+      <div class="line"><span class="who">ユナ</span><div><span class="ko">네네, <b class="k1">거기</b>요! 또 가고 싶어요.</span><span class="tr">そうそう、あそこ!また行きたいな。</span></div></div>
+      <div class="line"><span class="who">カイ</span><div><span class="ko">아, 생각났다! '할매떡볶이'요!</span><span class="tr">あ、思い出した!「ハルメトッポッキ」です!</span></div></div>
+      <div class="line"><span class="who">ユナ</span><div><span class="ko">맞아요! 이번 주말에 <b class="k1">거기</b> 또 가요.</span><span class="tr">そうそう!今週末、またあそこに行こうよ。</span></div></div>
+      <p class="memo">日本語訳はすべて「あの・あれ・あそこ」ですが、見えていない店の話なので韓国語はすべて <span class="ko k1">그</span> の仲間です。</p>
+    </div>
+
+    <div class="dialog">
+      <div class="title"><span>会話2 街で</span><button class="small" type="button">訳を隠す</button></div>
+      <div class="line"><span class="who">ミンジュン</span><div><span class="ko"><b class="k2">저기</b> 줄 서 있는 가게 뭐예요?</span><span class="tr">あそこの行列ができてる店、何?</span></div></div>
+      <div class="line"><span class="who">サキ</span><div><span class="ko"><b class="k2">저거</b> 요즘 유명한 베이글 가게예요.</span><span class="tr">あれ、最近有名なベーグル屋さんですよ。</span></div></div>
+      <div class="line"><span class="who">ミンジュン</span><div><span class="ko">아, <b class="k1">그</b> 가게! 인스타에서 봤어요.</span><span class="tr">あ、あの店!インスタで見ました。</span></div></div>
+      <div class="line"><span class="who">サキ</span><div><span class="ko">저도요. 이따 <b class="k2">저기</b> 가 볼래요?</span><span class="tr">私もです。あとであそこ行ってみます?</span></div></div>
+      <p class="memo">目の前に見えている店は <span class="ko k2">저기・저거</span>。「インスタで見たあの店」と記憶とつなげるところだけ <span class="ko k1">그</span> になっています。</p>
+    </div>
+  </section>
+
+  <!-- 8. まとめ -->
+  <section>
+    <h2><span class="num">8</span>まとめ</h2>
+    <div class="tbl">
+      <table class="sum">
+        <tr><th></th><th class="k1 ko">그</th><th class="k2 ko">저</th></tr>
+        <tr><td>指すもの</td><td>聞き手の近くのもの<br><strong>見えていない</strong>もの(話・記憶の中)</td><td>2人から離れていて<br><strong>見えている</strong>もの</td></tr>
+        <tr><td>日本語</td><td>「その」「あの」</td><td>「あの」</td></tr>
+        <tr><td>例</td><td class="ko">어제 간 그 가게</td><td class="ko">저기 보이는 저 가게</td></tr>
+      </table>
+    </div>
+    <p class="note">日本語で「あの」と言いたくなったら、「それは今、目の前に見えているか」を考えます。見えていなければ <span class="ko k1">그</span> です。</p>
+  </section>
+
+  <!-- 9. 練習問題 -->
+  <section id="quiz">
+    <h2><span class="num">9</span>練習問題</h2>
+    <p class="note">自然なほうを押してください。正解と解説が出ます。</p>
+
+    <div class="q" data-answer="저">
+      <p class="qtext"><span class="scene">遠くに見える建物を指さして。</span>Q1. <span class="ko">( ? ) 건물이 도서관이에요.</span></p>
+      <div class="opts"><button type="button" data-v="그">그</button><button type="button" data-v="저">저</button></div>
+      <div class="fb" hidden><span class="res"></span>2人から離れていて、目に見えているので <span class="ko k2">저</span> です。</div>
+    </div>
+
+    <div class="q" data-answer="그">
+      <p class="qtext">Q2. <span class="ko">A: 어제 홍대에서 진짜 맛있는 파스타 먹었어요.</span><br><span class="ko">B: 오, ( ? ) 가게 어디예요?</span></p>
+      <div class="opts"><button type="button" data-v="그">그</button><button type="button" data-v="저">저</button></div>
+      <div class="fb" hidden><span class="res"></span>相手の話に出てきた店で、今は見えていません。<span class="ko k1">그</span> です。</div>
+    </div>
+
+    <div class="q" data-answer="거기">
+      <p class="qtext"><span class="scene">旅行中の友達に電話で。</span>Q3. <span class="ko">( ? ) 날씨 어때요?</span></p>
+      <div class="opts"><button type="button" data-v="저기">저기</button><button type="button" data-v="거기">거기</button></div>
+      <div class="fb" hidden><span class="res"></span>相手のいる場所は「聞き手の近く」なので <span class="ko k1">거기</span> です。</div>
+    </div>
+
+    <div class="q" data-answer="그거">
+      <p class="qtext"><span class="scene">友達が持っているかばんを見て。</span>Q4. <span class="ko">( ? ) 새로 샀어요? 예쁘다!</span></p>
+      <div class="opts"><button type="button" data-v="그거">그거</button><button type="button" data-v="저거">저거</button></div>
+      <div class="fb" hidden><span class="res"></span>聞き手が持っているものは <span class="ko k1">그거</span> です。</div>
+    </div>
+
+    <div class="q" data-answer="그">
+      <p class="qtext">Q5. <span class="ko">고등학교 때 수학 선생님 기억나요? ( ? ) 선생님이 지금 우리 학교에 계세요!</span></p>
+      <div class="opts"><button type="button" data-v="저">저</button><button type="button" data-v="그">그</button></div>
+      <div class="fb" hidden><span class="res"></span>話題に出た、2人の記憶の中の先生なので <span class="ko k1">그</span> です。日本語なら「あの先生」と言う場面です。</div>
+    </div>
+
+    <p class="score" aria-live="polite"></p>
+    <p style="text-align:right"><button class="small" type="button" id="reset">もう一度解く</button></p>
+  </section>
+
+</main>
+
+<footer>似ている表現の使い分け 07|韓国語初級</footer>
+
+<script>
+  // 練習問題
+  const qs = document.querySelectorAll('.q');
+  const scoreEl = document.querySelector('.score');
+  function updateScore() {
+    const done = document.querySelectorAll('.q.done').length;
+    const right = document.querySelectorAll('.q.correct').length;
+    scoreEl.textContent = done ? `正解 ${right} / ${qs.length}` : '';
+  }
+  qs.forEach(q => {
+    const ans = q.dataset.answer;
+    q.querySelectorAll('.opts button').forEach(b => {
+      b.addEventListener('click', () => {
+        if (q.classList.contains('done')) return;
+        q.classList.add('done');
+        const ok = b.dataset.v === ans;
+        if (ok) q.classList.add('correct');
+        q.querySelectorAll('.opts button').forEach(x => {
+          if (x.dataset.v === ans) x.classList.add('right');
+        });
+        if (!ok) b.classList.add('wrong');
+        const fb = q.querySelector('.fb');
+        fb.querySelector('.res').textContent = ok ? '○ 正解です!' : `もう一歩!正解は「${ans}」です。`;
+        fb.hidden = false;
+        updateScore();
+      });
+    });
+  });
+  document.getElementById('reset').addEventListener('click', () => {
+    qs.forEach(q => {
+      q.classList.remove('done', 'correct');
+      q.querySelectorAll('.opts button').forEach(x => x.classList.remove('right', 'wrong'));
+      q.querySelector('.fb').hidden = true;
+    });
+    updateScore();
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // 会話の訳の表示・非表示
+  document.querySelectorAll('.dialog .small').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const d = btn.closest('.dialog');
+      d.classList.toggle('hide-tr');
+      btn.textContent = d.classList.contains('hide-tr') ? '訳を表示' : '訳を隠す';
+    });
+  });
+</script>
+</body>
+</html>
