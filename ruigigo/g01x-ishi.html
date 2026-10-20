@@ -181,6 +181,38 @@
   table { min-width: 0; }
   .film.fig .flow { flex-wrap: wrap; }
   .film.fig .flow .box { white-space: normal; font-size: .9rem; }
+
+  /* 表紙・目次・項目切り替え */
+  .bar { position: sticky; top: 0; z-index: 5; background: rgba(250,248,244,.96); border-bottom: 1px solid var(--line);
+         display: flex; gap: 8px; align-items: center; justify-content: space-between; padding: 6px 16px; }
+  .bar .speed { font-size: .85rem; color: var(--sub); }
+  .bar .speed button { font: inherit; font-size: .8rem; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 1px 8px; cursor: pointer; }
+  .bar .speed button.on { background: var(--band); color: #fff; border-color: var(--band); }
+  .pill { font: inherit; font-size: .9rem; border: 1px solid var(--band); background: #fff; color: var(--band); border-radius: 999px; padding: 4px 14px; cursor: pointer; }
+  .pill.on { background: var(--band); color: #fff; }
+  .item { display: none; }
+  .item.show { display: block; }
+  body.allview .item { display: block; margin-bottom: 40px; }
+  body.allview #toc { display: none; }
+  body.allview .nv { display: none; }
+  ol.toc { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 10px; }
+  .toc a { display: flex; gap: 12px; align-items: center; text-decoration: none; color: var(--ink); background: #fff;
+           border: 1px solid var(--line); border-left: 8px solid var(--c1); border-radius: 8px; padding: 10px 12px; font-weight: 700; }
+  .toc li:nth-child(even) a { border-left-color: var(--c2); }
+  .toc .no { font-size: 1.3rem; }
+  .toc .tt { display: flex; flex-direction: column; }
+  .toc .ts { font-weight: 400; font-size: .82rem; color: var(--sub); }
+  .tocbtns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 8px; }
+  .ihead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; margin: 22px 0 -6px; }
+  .ititle { font-size: 1.3rem; margin: 0; }
+  .ititle .no { margin-right: 6px; }
+  .listen { display: flex; align-items: center; gap: 8px; }
+  .listen .play { font: inherit; font-size: .9rem; border: 0; background: var(--c2); color: #fff; border-radius: 999px; padding: 5px 14px; cursor: pointer; }
+  .listen .play.playing { background: var(--c1); }
+  .listen .state { font-size: .8rem; color: var(--sub); }
+  .listen.noaudio { display: none; }
+  .nv { display: flex; justify-content: space-between; gap: 8px; margin: 10px 0 24px; font-size: .9rem; }
+  .nv a { color: var(--ink); text-decoration: none; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 4px 12px; }
 </style>
 </head>
 <body>
@@ -192,12 +224,28 @@
     <p class="sub">どちらも「〜します」。その意志は、だれに向いている?|『新・韓国語へのとびら』13A・13B</p>
   </div>
 </header>
+<div class="bar"><button type="button" class="pill" id="goToc">目次</button><span class="speed">速さ <button type="button" data-r="0.8">0.8</button><button type="button" data-r="1" class="on">1.0</button><button type="button" data-r="1.2">1.2</button></span></div>
 
 <main class="wrap">
+  <section id="toc" class="item">
+    <h2>目次</h2>
+    <p>見たい項目を押してください。各項目には説明音声があります。通学中は「全部続けて聞く」で、最初から最後まで聞けます。</p>
+    <ol class="toc">
+      <li><a href="#s1"><span class="no">①</span><span class="tt">はじめに<span class="ts">13A・13Bの2つの「〜します」と、違いのひとこと</span></span></a></li>
+      <li><a href="#s2"><span class="no">②</span><span class="tt">形の作り方<span class="ts">活用形Ⅱに付ける・発音とつづり</span></span></a></li>
+      <li><a href="#s3"><span class="no">③</span><span class="tt">見分け方<span class="ts">3つのチェックと、同じ文での比べ方</span></span></a></li>
+      <li><a href="#s4"><span class="no">④</span><span class="tt">例と会話<span class="ts">片方だけが自然な例・短い会話</span></span></a></li>
+      <li><a href="#s5"><span class="no">⑤</span><span class="tt">まとめと練習<span class="ts">まとめの表と練習問題</span></span></a></li>
+    </ol>
+    <div class="tocbtns"><button type="button" class="pill" id="playAll">▶ 全部続けて聞く</button><button type="button" class="pill" id="showAll">全部を1ページで見る</button></div>
+  </section>
 
-  <!-- 1. 導入 -->
+
+  <div id="s1" class="item">
+    <div class="ihead"><h2 class="ititle"><span class="no">①</span>はじめに</h2>
+      <div class="listen" data-id="s1"><button type="button" class="play">▶ 説明を聞く</button><span class="state"></span></div></div>
   <section>
-    <h2><span class="num">1</span>13Aと13Bで、2つの「〜します」に出会いました</h2>
+    <h2>13Aと13Bで、2つの「〜します」に出会いました</h2>
     <p>13Aでは <span class="ko k1">Ⅱ-ㄹ게요</span>、13Bでは <span class="ko k2">Ⅱ-ㄹ 거예요</span> を勉強しました。どちらも、自分が「〜します」という<strong>意志</strong>を表すことができます。</p>
     <div class="big">
       <span class="ko"><b class="k1">나중에 메일로 보낼게요.</b></span>
@@ -212,10 +260,8 @@
     </p>
     <p class="note">※ <span class="ko">Ⅱ-ㄹ 거예요</span> には「相手のつもりを聞く(뭐 할 거예요?)」「推量(비가 올 거예요)」の使い方もありますが、このページでは扱いません。</p>
   </section>
-
-  <!-- 2. ひとことで -->
   <section>
-    <h2><span class="num">2</span>ひとことで言うと</h2>
+    <h2>ひとことで言うと</h2>
     <div class="core b1">
       <span class="head"><span class="ko k1">Ⅱ-ㄹ게요</span> → 相手に向けた意志「〜しますね」</span>
       <p>相手の言葉や様子を受けて、<strong>その場で決めたこと</strong>を相手に伝えます。約束・引き受け・申し出の気持ちです。</p>
@@ -239,10 +285,14 @@
       <li><b class="ko k2">ㄹ 거예요</b> は聞き手がいなくても言えます。相手がだれでも、内容は変わりません。</li>
     </ul>
   </section>
+    <nav class="nv"><a href="#toc">← 目次</a><a href="#s2">② 形の作り方 →</a></nav>
+  </div>
 
-  <!-- 3. 形の作り方 -->
+  <div id="s2" class="item">
+    <div class="ihead"><h2 class="ititle"><span class="no">②</span>形の作り方</h2>
+      <div class="listen" data-id="s2"><button type="button" class="play">▶ 説明を聞く</button><span class="state"></span></div></div>
   <section>
-    <h2><span class="num">3</span>形の作り方</h2>
+    <h2>形の作り方</h2>
     <p>どちらも<strong>活用形Ⅱ</strong>に付きます。</p>
     <div class="tbl">
       <table>
@@ -260,10 +310,14 @@
       <li><span class="ko">거예요</span> は <span class="ko">것이에요</span> が縮まった形です。</li>
     </ul>
   </section>
+    <nav class="nv"><a href="#s1">← ① はじめに</a><a href="#s3">③ 見分け方 →</a></nav>
+  </div>
 
-  <!-- 4. 見分け方 -->
+  <div id="s3" class="item">
+    <div class="ihead"><h2 class="ititle"><span class="no">③</span>見分け方</h2>
+      <div class="listen" data-id="s3"><button type="button" class="play">▶ 説明を聞く</button><span class="state"></span></div></div>
   <section>
-    <h2><span class="num">4</span>迷ったときの3つのチェック</h2>
+    <h2>迷ったときの3つのチェック</h2>
     <div class="core b1">
       <span class="head">チェック① 相手の言葉や様子を受けて、その場で決めた?</span>
       <p>→ はい なら <span class="ko k1">ㄹ게요</span>。頼まれた・困っている様子を見た・相手の提案を聞いた、などがきっかけです。</p>
@@ -277,10 +331,8 @@
       <p>→ 言いかえられるなら <span class="ko k2">ㄹ 거예요</span>。13Bの本文の <span class="ko">여행을 할 생각이에요</span>、<span class="ko">올라갈 예정이에요</span> と同じ仲間です。<span class="ko k1">ㄹ게요</span> はこの言いかえができません。</p>
     </div>
   </section>
-
-  <!-- 5. 同じ文で比べる -->
   <section>
-    <h2><span class="num">5</span>同じ文で比べてみよう</h2>
+    <h2>同じ文で比べてみよう</h2>
     <p>どちらも言える場面でも、伝わる気持ちが変わります。</p>
 
     <div class="cmpset">
@@ -307,10 +359,14 @@
         <span class="ja">「次は必ず合格してみせます」。だれかへの約束ではなく、自分の決心を述べています。13Bの例文 <span class="ko">이번에는 꼭 합격할 거예요</span> と同じです。</span></div>
     </div>
   </section>
+    <nav class="nv"><a href="#s2">← ② 形の作り方</a><a href="#s4">④ 例と会話 →</a></nav>
+  </div>
 
-  <!-- 6. 片方だけが自然 -->
+  <div id="s4" class="item">
+    <div class="ihead"><h2 class="ititle"><span class="no">④</span>例と会話</h2>
+      <div class="listen" data-id="s4"><button type="button" class="play">▶ 説明を聞く</button><span class="state"></span></div></div>
   <section>
-    <h2><span class="num">6</span>片方だけが自然な例</h2>
+    <h2>片方だけが自然な例</h2>
 
     <div class="judge">
       <span class="scene">友達に「週末、何するの?」と聞かれて</span>
@@ -343,10 +399,8 @@
       <p>13Aの本文で、ハヌルさんは「カフェの名前を知りたい」という田中さんに <span class="ko">잠깐만요. 검색해 볼게요.</span>(ちょっと待ってください。検索してみますね)と言いました。田中さんの話を受けて、その場で決めて申し出ているので <span class="ko k1">ㄹ게요</span> なのです。</p>
     </div>
   </section>
-
-  <!-- 7. 会話 -->
   <section>
-    <h2><span class="num">7</span>短い会話</h2>
+    <h2>短い会話</h2>
 
     <div class="dialog">
       <div class="title"><span>会話1 授業のあとで</span><button class="small" type="button">訳を隠す</button></div>
@@ -367,10 +421,14 @@
       <p class="memo">前から決めていた日曜日の予定は <span class="ko k2">ㄹ 거예요</span>。ハヌルさんに誘われてから、その場で役割を引き受けるところで <span class="ko k1">ㄹ게요</span> に変わります。</p>
     </div>
   </section>
+    <nav class="nv"><a href="#s3">← ③ 見分け方</a><a href="#s5">⑤ まとめと練習 →</a></nav>
+  </div>
 
-  <!-- 8. まとめ -->
+  <div id="s5" class="item">
+    <div class="ihead"><h2 class="ititle"><span class="no">⑤</span>まとめと練習</h2>
+      <div class="listen" data-id="s5"><button type="button" class="play">▶ 説明を聞く</button><span class="state"></span></div></div>
   <section>
-    <h2><span class="num">8</span>まとめ</h2>
+    <h2>まとめ</h2>
     <div class="tbl">
       <table class="sum">
         <tr><th></th><th class="k1 ko">Ⅱ-ㄹ게요</th><th class="k2 ko">Ⅱ-ㄹ 거예요</th></tr>
@@ -382,10 +440,8 @@
       </table>
     </div>
   </section>
-
-  <!-- 9. 練習問題 -->
   <section id="quiz">
-    <h2><span class="num">9</span>練習問題</h2>
+    <h2>練習問題</h2>
     <p class="note">自然なほうを押してください。正解と解説が出ます。</p>
 
     <div class="q" data-answer="복사할게요">
@@ -427,6 +483,8 @@
     <p class="score" aria-live="polite"></p>
     <p style="text-align:right"><button class="small" type="button" id="reset">もう一度解く</button></p>
   </section>
+    <nav class="nv"><a href="#s4">← ④ 例と会話</a><a href="#toc">目次へ →</a></nav>
+  </div>
 
 </main>
 
@@ -478,6 +536,58 @@
       btn.textContent = d.classList.contains('hide-tr') ? '訳を表示' : '訳を隠す';
     });
   });
+
+  // 項目の切り替え
+  const items = [...document.querySelectorAll('.item')];
+  function show(id) {
+    if (!document.getElementById(id)) id = 'toc';
+    items.forEach(x => x.classList.toggle('show', x.id === id));
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+  show(location.hash.slice(1) || 'toc');
+  document.getElementById('goToc').addEventListener('click', () => {
+    document.body.classList.remove('allview'); document.getElementById('showAll').classList.remove('on');
+    location.hash = 'toc'; show('toc');
+  });
+  document.getElementById('showAll').addEventListener('click', () => {
+    document.body.classList.add('allview'); window.scrollTo(0, 0);
+  });
+
+  // 説明音声
+  const ORDER = ['s1','s2','s3','s4','s5'];
+  let rate = 1, cur = null, curId = null, chain = false;
+  const src = id => 'audio/g01x/' + id + '.mp3';
+  function mark(id, on) {
+    const b = document.querySelector('.listen[data-id="' + id + '"] .play');
+    if (b) { b.classList.toggle('playing', on); b.textContent = on ? '■ 止める' : '▶ 説明を聞く'; }
+  }
+  function stop() { if (cur) { cur.pause(); mark(curId, false); } cur = null; curId = null; }
+  function play(id) {
+    stop();
+    const a = new Audio(src(id)); a.playbackRate = rate; cur = a; curId = id; mark(id, true);
+    a.addEventListener('ended', () => {
+      mark(id, false); cur = null; curId = null;
+      const n = ORDER.indexOf(id) + 1;
+      if (chain && n < ORDER.length) { location.hash = ORDER[n]; play(ORDER[n]); } else chain = false;
+    });
+    a.play().catch(() => { mark(id, false); });
+  }
+  document.querySelectorAll('.listen').forEach(l => {
+    const id = l.dataset.id;
+    const probe = new Audio(); probe.preload = 'metadata';
+    probe.addEventListener('error', () => l.classList.add('noaudio'));
+    probe.addEventListener('loadedmetadata', () => {
+      const t = Math.round(probe.duration); l.querySelector('.state').textContent = Math.floor(t / 60) + '分' + (t % 60) + '秒';
+    });
+    probe.src = src(id);
+    l.querySelector('.play').addEventListener('click', () => { chain = false; if (curId === id) stop(); else play(id); });
+  });
+  document.getElementById('playAll').addEventListener('click', () => { chain = true; location.hash = 's1'; play('s1'); });
+  document.querySelectorAll('.speed button').forEach(b => b.addEventListener('click', () => {
+    rate = parseFloat(b.dataset.r); if (cur) cur.playbackRate = rate;
+    document.querySelectorAll('.speed button').forEach(x => x.classList.toggle('on', x === b));
+  }));
 </script>
 </body>
 </html>
