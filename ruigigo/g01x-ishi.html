@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ⅱ-ㄹ게요とⅡ-ㄹ 거예요(自分の意志)|似ている表現の使い分け 01-特別編</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== シリーズ共通デザイン(似ている表現の使い分け) ===== */
+  :root {
+    --bg: #faf8f4;
+    --card: #ffffff;
+    --ink: #2b2b2b;
+    --sub: #6b655e;
+    --line: #e6dfd3;
+    --band: #222222;
+    /* 比べる表現の色(ページごとに意味を決めて、全体でそろえる) */
+    --c1: #c9620a; --c1bg: #fdf0e2;   /* オレンジ */
+    --c2: #2a64a8; --c2bg: #e8f0fa;   /* 青 */
+    --c3: #2b8152; --c3bg: #e6f3eb;   /* 緑 */
+    --c4: #7a4bab; --c4bg: #f2ebf8;   /* 紫 */
+    --ok: #2b8152; --mid: #b07a12; --ng: #b8382c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .ko {
+    font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+    font-size: 1.12em;
+    font-weight: 500;
+  }
+  b.ko, .ko b, strong.ko { font-weight: 700; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+  header.band { background: var(--band); color: #fff; padding: 28px 0 24px; }
+  header .series { margin: 0; font-size: .85rem; color: #cfc9c0; letter-spacing: .05em; }
+  header h1 { margin: 6px 0 6px; font-size: 1.5rem; line-height: 1.5; }
+  header h1 .ko { font-size: 1.05em; font-weight: 700; }
+  header .sub { margin: 0; font-size: .9rem; color: #e4ded5; }
+  header .k1 { color: #ffa65c; } header .k2 { color: #8fbcf2; }
+  header .k3 { color: #8fd6ab; } header .k4 { color: #c9a6ee; }
+
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 18px;
+    margin: 20px 0;
+  }
+  h2 { font-size: 1.15rem; margin: 0 0 12px; line-height: 1.5; }
+  h2 .num {
+    display: inline-block; background: var(--band); color: #fff;
+    border-radius: 6px; padding: 0 8px; margin-right: 8px; font-size: .85rem;
+  }
+  h3 { font-size: 1rem; margin: 18px 0 6px; }
+  p { margin: 8px 0; }
+  .note { color: var(--sub); font-size: .9rem; }
+
+  /* 色 */
+  .k1 { color: var(--c1); } .k2 { color: var(--c2); } .k3 { color: var(--c3); } .k4 { color: var(--c4); }
+  .chip {
+    display: inline-block; border-radius: 999px; padding: 0 10px; margin: 2px 2px 2px 0;
+    color: #fff; font-weight: 700; font-size: .95em; line-height: 1.8;
+  }
+  .chip.k1 { background: var(--c1); } .chip.k2 { background: var(--c2); }
+  .chip.k3 { background: var(--c3); } .chip.k4 { background: var(--c4); }
+
+  /* 見本の文 */
+  .big { text-align: center; margin: 14px 0; }
+  .big .ko { display: block; font-size: 1.35em; font-weight: 700; }
+
+  /* ひとことで言うと */
+  .core { border-radius: 8px; padding: 12px 14px; margin: 10px 0; }
+  .core .head { font-weight: 700; }
+  .core p { margin: 4px 0 0; }
+  .b1 { background: var(--c1bg); border-left: 6px solid var(--c1); }
+  .b2 { background: var(--c2bg); border-left: 6px solid var(--c2); }
+  .b3 { background: var(--c3bg); border-left: 6px solid var(--c3); }
+  .b4 { background: var(--c4bg); border-left: 6px solid var(--c4); }
+  .extra { display: grid; gap: 8px; }
+  .extra .core { padding: 8px 12px; font-size: .95rem; }
+
+  ul.points { padding-left: 1.2em; margin: 8px 0; }
+  ul.points li { margin: 4px 0; }
+
+  /* 表 */
+  .tbl { overflow-x: auto; margin: 10px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; min-width: 460px; }
+  th, td { border: 1px solid var(--line); padding: 8px 6px; text-align: center; vertical-align: middle; }
+  th { background: #f3efe8; font-weight: 700; }
+  td.scene, th.scene { text-align: left; min-width: 9em; }
+  td .sm { display: block; font-size: .78rem; color: var(--sub); line-height: 1.4; }
+  .o { color: var(--ok); font-weight: 700; font-size: 1.15em; }
+  .t { color: var(--mid); font-weight: 700; font-size: 1.15em; }
+  .x { color: var(--ng); font-weight: 700; font-size: 1.15em; }
+  .legend { font-size: .85rem; color: var(--sub); }
+
+  /* 例文 */
+  .ex { border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 10px 0; }
+  .ex .ko { display: block; font-size: 1.2em; font-weight: 700; line-height: 1.7; }
+  .ex .ja { display: block; font-size: .95rem; margin-top: 2px; }
+  .ex .mark { font-weight: 700; margin-right: 6px; }
+  .cmpset { margin: 18px 0 22px; }
+  .cmpset > h3 { margin-top: 0; }
+
+  .judge { display: grid; gap: 8px; margin: 14px 0 18px; }
+  .judge .row { display: grid; grid-template-columns: 2em 1fr; gap: 6px; align-items: baseline; }
+  .judge .row .ko { font-size: 1.15em; font-weight: 700; }
+  .judge .row.ng .ko { color: #9a938a; }
+  .judge .why { font-size: .93rem; background: #f6f3ee; border-radius: 8px; padding: 8px 12px; }
+  .judge .scene { font-size: .9rem; color: var(--sub); }
+
+  .column { background: #f6f3ee; border-radius: 8px; padding: 12px 14px; margin-top: 16px; font-size: .95rem; }
+  .column .head { font-weight: 700; }
+
+  /* 会話 */
+  .dialog { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 14px 0; }
+  .dialog .title { font-weight: 700; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .dialog .line { display: grid; grid-template-columns: 3.6em 1fr; gap: 4px 8px; padding: 6px 0; border-top: 1px dashed var(--line); }
+  .dialog .line:first-of-type { border-top: none; }
+  .dialog .who { font-weight: 700; color: var(--sub); font-size: .9rem; padding-top: .2em; }
+  .dialog .ko { display: block; }
+  .dialog .tr { display: block; color: var(--sub); font-size: .9rem; }
+  .dialog.hide-tr .tr { visibility: hidden; }
+  .dialog .memo { font-size: .88rem; color: var(--sub); margin-top: 8px; }
+  button.small {
+    font: inherit; font-size: .8rem; padding: 2px 10px; border-radius: 999px;
+    border: 1px solid var(--line); background: #fff; color: var(--sub); cursor: pointer; white-space: nowrap;
+  }
+
+  /* 練習問題 */
+  .q { border-top: 1px dashed var(--line); padding: 14px 0; }
+  .q:first-of-type { border-top: none; }
+  .q .qtext { font-weight: 700; }
+  .q .qtext .ko { font-weight: 700; }
+  .q .scene { font-size: .9rem; color: var(--sub); display: block; font-weight: 400; }
+  .opts { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+  .opts button {
+    font-family: "Noto Sans KR", sans-serif; font-size: 1.05rem; font-weight: 700;
+    padding: 8px 16px; border-radius: 10px; border: 2px solid var(--line);
+    background: #fff; color: var(--ink); cursor: pointer; min-width: 6em;
+  }
+  .opts button:hover { border-color: #bdb4a6; }
+  .opts button.right { border-color: var(--ok); background: #e6f3eb; }
+  .opts button.wrong { border-color: var(--ng); background: #fbe9e7; }
+  .q.done .opts button { cursor: default; }
+  .fb { background: #f6f3ee; border-radius: 8px; padding: 10px 12px; margin-top: 8px; font-size: .95rem; }
+  .fb .res { font-weight: 700; display: block; }
+  .score { text-align: right; font-weight: 700; margin: 6px 0 0; }
+
+  /* 図(流れ・比喩) */
+  .flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 12px 0; }
+  .flow .box {
+    border: 2px solid currentColor; border-radius: 8px; padding: 2px 10px; background: #fff;
+    font-family: "Noto Sans KR", sans-serif; font-weight: 700;
+  }
+  .flow .arrow { color: var(--sub); font-weight: 700; }
+  .flow .cut { color: var(--sub); font-size: .85rem; border: 1px dashed var(--sub); border-radius: 6px; padding: 0 6px; }
+  .flow .res { width: 100%; text-align: center; }
+  .film { display: grid; gap: 10px; margin: 12px 0; }
+  .film .core p { margin-top: 2px; }
+
+  /* まとめ */
+  table.sum { min-width: 0; font-size: .86rem; }
+  .sum th, .sum td { text-align: left; padding: 8px 5px; }
+  .sum td:first-child, .sum th:first-child { width: 4.2em; }
+  .film .flow { gap: 4px; flex-wrap: nowrap; }
+  .film .flow .box { font-size: .85rem; padding: 2px 6px; white-space: nowrap; }
+  .film .flow .cut { white-space: nowrap; }
+
+  footer { color: var(--sub); font-size: .8rem; text-align: center; padding: 8px 0 40px; }
+  .big .ja { display:block; }
+  table { min-width: 0; }
+  .film.fig .flow { flex-wrap: wrap; }
+  .film.fig .flow .box { white-space: normal; font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap">
+    <p class="series">似ている表現の使い分け 01-特別編</p>
+    <h1><span class="ko k1">Ⅱ-ㄹ게요</span> と <span class="ko k2">Ⅱ-ㄹ 거예요</span><br>「自分の意志」の違い</h1>
+    <p class="sub">どちらも「〜します」。その意志は、だれに向いている?|『新・韓国語へのとびら』13A・13B</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 1. 導入 -->
+  <section>
+    <h2><span class="num">1</span>13Aと13Bで、2つの「〜します」に出会いました</h2>
+    <p>13Aでは <span class="ko k1">Ⅱ-ㄹ게요</span>、13Bでは <span class="ko k2">Ⅱ-ㄹ 거예요</span> を勉強しました。どちらも、自分が「〜します」という<strong>意志</strong>を表すことができます。</p>
+    <div class="big">
+      <span class="ko"><b class="k1">나중에 메일로 보낼게요.</b></span>
+      <span class="ja note">後でメールで送りますね。(13A)</span>
+      <span class="ko" style="margin-top:10px"><b class="k2">이번에는 꼭 합격할 거예요.</b></span>
+      <span class="ja note">今度はきっと合格するつもりです。(13B)</span>
+    </div>
+    <p>では、この2つはどう違うのでしょうか。このページでは、<strong>「私が〜します」という意志の使い方だけ</strong>にしぼって比べます。</p>
+    <p>
+      <span class="chip k1">Ⅱ-ㄹ게요</span>
+      <span class="chip k2">Ⅱ-ㄹ 거예요</span>
+    </p>
+    <p class="note">※ <span class="ko">Ⅱ-ㄹ 거예요</span> には「相手のつもりを聞く(뭐 할 거예요?)」「推量(비가 올 거예요)」の使い方もありますが、このページでは扱いません。</p>
+  </section>
+
+  <!-- 2. ひとことで -->
+  <section>
+    <h2><span class="num">2</span>ひとことで言うと</h2>
+    <div class="core b1">
+      <span class="head"><span class="ko k1">Ⅱ-ㄹ게요</span> → 相手に向けた意志「〜しますね」</span>
+      <p>相手の言葉や様子を受けて、<strong>その場で決めたこと</strong>を相手に伝えます。約束・引き受け・申し出の気持ちです。</p>
+    </div>
+    <div class="core b2">
+      <span class="head"><span class="ko k2">Ⅱ-ㄹ 거예요</span> → 自分の中の意志「〜するつもりです」</span>
+      <p><strong>前から決めている予定・計画・決心</strong>を、事実として伝えます。</p>
+    </div>
+
+    <div class="film fig">
+      <div class="core b1">
+        <div class="flow k1"><span class="box">相手の言葉・様子</span><span class="arrow">→</span><span class="box">その場で決める</span><span class="arrow">→</span><span class="box">相手に「〜しますね」</span></div>
+      </div>
+      <div class="core b2">
+        <div class="flow k2"><span class="box">前から決めている</span><span class="arrow">→</span><span class="box">手帳の予定を読み上げる</span></div>
+      </div>
+    </div>
+
+    <ul class="points">
+      <li><b class="ko k1">ㄹ게요</b> は<strong>聞き手がいないと言えません</strong>。日記や独り言には使いません。</li>
+      <li><b class="ko k2">ㄹ 거예요</b> は聞き手がいなくても言えます。相手がだれでも、内容は変わりません。</li>
+    </ul>
+  </section>
+
+  <!-- 3. 形の作り方 -->
+  <section>
+    <h2><span class="num">3</span>形の作り方</h2>
+    <p>どちらも<strong>活用形Ⅱ</strong>に付きます。</p>
+    <div class="tbl">
+      <table>
+        <tr><th>基本形</th><th>活用形Ⅱ</th><th class="k1">Ⅱ-ㄹ게요</th><th class="k2">Ⅱ-ㄹ 거예요</th></tr>
+        <tr><td class="ko">하다</td><td class="ko">하</td><td class="ko">할게요</td><td class="ko">할 거예요</td></tr>
+        <tr><td class="ko">보내다</td><td class="ko">보내</td><td class="ko">보낼게요</td><td class="ko">보낼 거예요</td></tr>
+        <tr><td class="ko">찍다</td><td class="ko">찍으</td><td class="ko">찍을게요</td><td class="ko">찍을 거예요</td></tr>
+        <tr><td class="ko">읽다</td><td class="ko">읽으</td><td class="ko">읽을게요</td><td class="ko">읽을 거예요</td></tr>
+        <tr><td><span class="ko">만들다</span><span class="sm">ㄹ語幹</span></td><td class="ko">만들</td><td class="ko">만들게요</td><td class="ko">만들 거예요</td></tr>
+      </table>
+    </div>
+    <ul class="points note">
+      <li>発音は濃音になります。<span class="ko">할게요 [할께요]</span>、<span class="ko">할 거예요 [할 꺼에요]</span>。つづりは <span class="ko">할게요</span> です(<span class="ko">×할께요</span>)。</li>
+      <li>ㄹ語幹は活用形Ⅱに <span class="ko">으</span> が入りません。<span class="ko">만들다 → 만들게요</span>(<span class="ko">×만들을게요</span>)。</li>
+      <li><span class="ko">거예요</span> は <span class="ko">것이에요</span> が縮まった形です。</li>
+    </ul>
+  </section>
+
+  <!-- 4. 見分け方 -->
+  <section>
+    <h2><span class="num">4</span>迷ったときの3つのチェック</h2>
+    <div class="core b1">
+      <span class="head">チェック① 相手の言葉や様子を受けて、その場で決めた?</span>
+      <p>→ はい なら <span class="ko k1">ㄹ게요</span>。頼まれた・困っている様子を見た・相手の提案を聞いた、などがきっかけです。</p>
+    </div>
+    <div class="core b1">
+      <span class="head">チェック② 日本語で「〜しますね」「〜しておきますね」と言える?</span>
+      <p>→ 自然なら <span class="ko k1">ㄹ게요</span>。相手への約束・申し出になっています。</p>
+    </div>
+    <div class="core b2">
+      <span class="head">チェック③ 「〜할 생각이에요(〜するつもりです)」「〜할 예정이에요(〜する予定です)」に言いかえられる?</span>
+      <p>→ 言いかえられるなら <span class="ko k2">ㄹ 거예요</span>。13Bの本文の <span class="ko">여행을 할 생각이에요</span>、<span class="ko">올라갈 예정이에요</span> と同じ仲間です。<span class="ko k1">ㄹ게요</span> はこの言いかえができません。</p>
+    </div>
+  </section>
+
+  <!-- 5. 比較表 -->
+  <section>
+    <h2><span class="num">5</span>どんな場面で使う?</h2>
+    <div class="tbl">
+      <table>
+        <tr><th class="scene">場面(主語はすべて「私」)</th><th class="k1 ko">Ⅱ-ㄹ게요</th><th class="k2 ko">Ⅱ-ㄹ 거예요</th></tr>
+        <tr><td class="scene">頼まれたことを引き受ける<span class="sm">네, 제가 할게요.</span></td><td class="o">○</td><td class="t">△</td></tr>
+        <tr><td class="scene">相手のために申し出る<span class="sm">제가 도와줄게요.</span></td><td class="o">○</td><td class="t">△</td></tr>
+        <tr><td class="scene">その場の人に断って行動する<span class="sm">먼저 갈게요. / 잠깐 전화 좀 받을게요.</span></td><td class="o">○</td><td class="t">△</td></tr>
+        <tr><td class="scene">予定を聞かれて答える<span class="sm">주말에 집에서 쉴 거예요.</span></td><td class="x">×</td><td class="o">○</td></tr>
+        <tr><td class="scene">将来の夢・計画を話す<span class="sm">졸업하면 한국에서 일할 거예요.</span></td><td class="x">×</td><td class="o">○</td></tr>
+        <tr><td class="scene">自分の決心を話す(相手は聞くだけ)<span class="sm">올해는 꼭 운동할 거예요.</span></td><td class="t">△</td><td class="o">○</td></tr>
+        <tr><td class="scene">日記・独り言</td><td class="x">×</td><td class="o">○</td></tr>
+      </table>
+    </div>
+    <p class="legend"><span class="o">○</span> 自然 <span class="t">△</span> 言えるが、意味がずれる・少し不自然 <span class="x">×</span> 使わない</p>
+  </section>
+
+  <!-- 6. 同じ文で比べる -->
+  <section>
+    <h2><span class="num">6</span>同じ文で比べてみよう</h2>
+    <p>どちらも言える場面でも、伝わる気持ちが変わります。</p>
+
+    <div class="cmpset">
+      <h3>① 先生に「レポートは金曜日までにね」と言われて</h3>
+      <div class="ex b1"><span class="ko">네, 금요일까지 <span class="k1">낼게요</span>.</span>
+        <span class="ja">「はい、金曜日までに出しますね」。先生の言葉を受けた約束です。返事としてはこちらが自然です。</span></div>
+      <div class="ex b2"><span class="ko">네, 금요일까지 <span class="k2">낼 거예요</span>.</span>
+        <span class="ja">「はい、金曜日までに出すつもりです」。自分の予定を報告している感じになり、約束の返事としては少しよそよそしく聞こえます。</span></div>
+    </div>
+
+    <div class="cmpset">
+      <h3>② お店で、みんなの注文を聞いたあとで</h3>
+      <div class="ex b1"><span class="ko">그럼 저는 김치찌개 <span class="k1">먹을게요</span>.</span>
+        <span class="ja">「じゃあ、私はキムチチゲにしますね」。みんなの注文を聞いて、その場で決めた感じです。</span></div>
+      <div class="ex b2"><span class="ko">저는 김치찌개 <span class="k2">먹을 거예요</span>.</span>
+        <span class="ja">「私はキムチチゲを食べるつもりです」。お店に来る前から決めていた感じです。</span></div>
+    </div>
+
+    <div class="cmpset">
+      <h3>③ 試験に落ちたあとで</h3>
+      <div class="ex b1"><span class="ko">엄마, 다음에는 꼭 <span class="k1">합격할게요</span>.</span>
+        <span class="ja">「お母さん、次は必ず合格するからね」。心配してくれる相手への約束です。</span></div>
+      <div class="ex b2"><span class="ko">다음에는 꼭 <span class="k2">합격할 거예요</span>.</span>
+        <span class="ja">「次は必ず合格してみせます」。だれかへの約束ではなく、自分の決心を述べています。13Bの例文 <span class="ko">이번에는 꼭 합격할 거예요</span> と同じです。</span></div>
+    </div>
+  </section>
+
+  <!-- 7. 片方だけが自然 -->
+  <section>
+    <h2><span class="num">7</span>片方だけが自然な例</h2>
+
+    <div class="judge">
+      <span class="scene">友達に「週末、何するの?」と聞かれて</span>
+      <div class="row"><span class="o">○</span><span class="ko">집에서 좀 <span class="k2">쉴 거예요</span>.</span></div>
+      <div class="row ng"><span class="x">×</span><span class="ko">집에서 좀 쉴게요.</span></div>
+      <div class="why">予定を聞かれて答えるときは <span class="ko k2">ㄹ 거예요</span> です。<span class="ko">쉴게요</span> にすると「(あなたがそう言うなら)休みますね」という、かみ合わない返事になります。</div>
+    </div>
+
+    <div class="judge">
+      <span class="scene">先輩が重そうな荷物を持っているのを見て</span>
+      <div class="row"><span class="o">○</span><span class="ko">선배, 제가 <span class="k1">들게요</span>.</span></div>
+      <div class="row ng"><span class="t">△</span><span class="ko">선배, 제가 들 거예요.</span></div>
+      <div class="why">相手の様子を見て、その場で申し出ているので <span class="ko k1">ㄹ게요</span> です。<span class="ko">들 거예요</span> だと「(前から)私が持つことにしています」のように聞こえます。</div>
+    </div>
+
+    <div class="judge">
+      <span class="scene">自己紹介で将来の夢を話す</span>
+      <div class="row"><span class="o">○</span><span class="ko">졸업하면 한국에서 <span class="k2">일할 거예요</span>.</span></div>
+      <div class="row ng"><span class="x">×</span><span class="ko">졸업하면 한국에서 일할게요.</span></div>
+      <div class="why">聞いている人と約束しているわけではありません。自分の計画を紹介しているので <span class="ko k2">ㄹ 거예요</span> です。</div>
+    </div>
+
+    <div class="judge">
+      <span class="scene">飲み会で、先に帰るとき</span>
+      <div class="row"><span class="o">○</span><span class="ko">내일 1교시라서 먼저 <span class="k1">갈게요</span>.</span></div>
+      <div class="row ng"><span class="t">△</span><span class="ko">내일 1교시라서 먼저 갈 거예요.</span></div>
+      <div class="why">その場の人たちに「お先に失礼しますね」と断っているので <span class="ko k1">ㄹ게요</span> が自然です。<span class="ko">갈 거예요</span> だと、帰る予定を説明しているだけに聞こえます。</div>
+    </div>
+
+    <div class="column">
+      <span class="head">教科書13Aの本文も <span class="ko k1">ㄹ게요</span></span>
+      <p>13Aの本文で、ハヌルさんは「カフェの名前を知りたい」という田中さんに <span class="ko">잠깐만요. 검색해 볼게요.</span>(ちょっと待ってください。検索してみますね)と言いました。田中さんの話を受けて、その場で決めて申し出ているので <span class="ko k1">ㄹ게요</span> なのです。</p>
+    </div>
+  </section>
+
+  <!-- 8. 会話 -->
+  <section>
+    <h2><span class="num">8</span>短い会話</h2>
+
+    <div class="dialog">
+      <div class="title"><span>会話1 授業のあとで</span><button class="small" type="button">訳を隠す</button></div>
+      <div class="line"><span class="who">先生</span><div><span class="ko">다나카 씨, 이 자료 다음 주까지 읽어 오세요.</span><span class="tr">田中さん、この資料、来週までに読んできてください。</span></div></div>
+      <div class="line"><span class="who">田中</span><div><span class="ko">네, 주말에 <b class="k1">읽을게요</b>.</span><span class="tr">はい、週末に読みますね。</span></div></div>
+      <div class="line"><span class="who">先生</span><div><span class="ko">모르는 거 있으면 메일 보내요.</span><span class="tr">わからないことがあったらメールしてね。</span></div></div>
+      <div class="line"><span class="who">田中</span><div><span class="ko">네, 궁금한 거 있으면 메일 <b class="k1">드릴게요</b>.</span><span class="tr">はい、気になることがあったらメールしますね。</span></div></div>
+      <p class="memo">先生の言葉を受けて「〜しますね」と約束しているので、どちらも <span class="ko k1">ㄹ게요</span> です。</p>
+    </div>
+
+    <div class="dialog">
+      <div class="title"><span>会話2 週末の予定</span><button class="small" type="button">訳を隠す</button></div>
+      <div class="line"><span class="who">ハヌル</span><div><span class="ko">이번 주말에 뭐 해요?</span><span class="tr">今週末、何しますか。</span></div></div>
+      <div class="line"><span class="who">田中</span><div><span class="ko">토요일에는 알바하고, 일요일에는 집에서 <b class="k2">쉴 거예요</b>.</span><span class="tr">土曜日はバイトして、日曜日は家で休むつもりです。</span></div></div>
+      <div class="line"><span class="who">ハヌル</span><div><span class="ko">일요일에 영화 보러 가는데 같이 가요.</span><span class="tr">日曜日に映画を見に行くんですけど、一緒に行きましょう。</span></div></div>
+      <div class="line"><span class="who">田中</span><div><span class="ko">좋아요! 그럼 표는 제가 <b class="k1">예매할게요</b>.</span><span class="tr">いいですね!じゃあ、チケットは私が予約しますね。</span></div></div>
+      <div class="line"><span class="who">ハヌル</span><div><span class="ko">고마워요. 그럼 팝콘은 제가 <b class="k1">살게요</b>.</span><span class="tr">ありがとう。じゃあ、ポップコーンは僕が買いますね。</span></div></div>
+      <p class="memo">前から決めていた日曜日の予定は <span class="ko k2">ㄹ 거예요</span>。ハヌルさんに誘われてから、その場で役割を引き受けるところで <span class="ko k1">ㄹ게요</span> に変わります。</p>
+    </div>
+  </section>
+
+  <!-- 9. まとめ -->
+  <section>
+    <h2><span class="num">9</span>まとめ</h2>
+    <div class="tbl">
+      <table class="sum">
+        <tr><th></th><th class="k1 ko">Ⅱ-ㄹ게요</th><th class="k2 ko">Ⅱ-ㄹ 거예요</th></tr>
+        <tr><td>意志の向き</td><td><strong>相手に向けた意志</strong><br>約束・引き受け・申し出</td><td><strong>自分の中の意志</strong><br>予定・計画・決心</td></tr>
+        <tr><td>いつ決めた</td><td>相手の言葉や様子を受けて<br>その場で</td><td>前から</td></tr>
+        <tr><td>聞き手</td><td><strong>必要</strong></td><td>いなくてもよい</td></tr>
+        <tr><td>日本語</td><td>〜しますね<br>〜しておきますね</td><td>〜するつもりです<br>〜する予定です</td></tr>
+        <tr><td>例</td><td class="ko">네, 제가 할게요.</td><td class="ko">주말에 쉴 거예요.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 10. 練習問題 -->
+  <section id="quiz">
+    <h2><span class="num">10</span>練習問題</h2>
+    <p class="note">自然なほうを押してください。正解と解説が出ます。</p>
+
+    <div class="q" data-answer="복사할게요">
+      <p class="qtext"><span class="scene">先生に「この資料、コピーしてくれる?」と頼まれました。</span>Q1. <span class="ko">네, 제가 ( ? ).</span></p>
+      <div class="opts"><button type="button" data-v="복사할게요">복사할게요</button><button type="button" data-v="복사할 거예요">복사할 거예요</button></div>
+      <div class="fb" hidden><span class="res"></span>頼まれたことを引き受ける返事なので <span class="ko k1">ㄹ게요</span> です。</div>
+    </div>
+
+    <div class="q" data-answer="갈 거예요">
+      <p class="qtext"><span class="scene">友達に冬休みの予定を聞かれました。</span>Q2. <span class="ko">A: 겨울 방학에 뭐 해요?</span><br><span class="ko">B: 친구들이랑 부산에 여행 ( ? ).</span></p>
+      <div class="opts"><button type="button" data-v="갈게요">갈게요</button><button type="button" data-v="갈 거예요">갈 거예요</button></div>
+      <div class="fb" hidden><span class="res"></span>前から決めている予定を答えているので <span class="ko k2">ㄹ 거예요</span> です。「〜할 생각이에요」にも言いかえられます。</div>
+    </div>
+
+    <div class="q" data-answer="끓여 줄게요">
+      <p class="qtext"><span class="scene">友達が「おなかすいた…」と言っています。</span>Q3. <span class="ko">그럼 제가 라면 ( ? ).</span></p>
+      <div class="opts"><button type="button" data-v="끓여 줄 거예요">끓여 줄 거예요</button><button type="button" data-v="끓여 줄게요">끓여 줄게요</button></div>
+      <div class="fb" hidden><span class="res"></span>相手の様子を見て、その場で申し出ているので <span class="ko k1">ㄹ게요</span> です。</div>
+    </div>
+
+    <div class="q" data-answer="될 거예요">
+      <p class="qtext"><span class="scene">スピーチで将来の夢を話します。</span>Q4. <span class="ko">저는 졸업하면 한국어 선생님이 ( ? ).</span></p>
+      <div class="opts"><button type="button" data-v="될게요">될게요</button><button type="button" data-v="될 거예요">될 거예요</button></div>
+      <div class="fb" hidden><span class="res"></span>聞いている人への約束ではなく、自分の計画を話しているので <span class="ko k2">ㄹ 거예요</span> です。</div>
+    </div>
+
+    <div class="q" data-answer="찍을게요">
+      <p class="qtext"><span class="scene">観光地で、知らない人に「写真を撮ってもらえますか」と頼まれました。</span>Q5. <span class="ko">네, ( ? ). 하나, 둘, 셋!</span></p>
+      <div class="opts"><button type="button" data-v="찍을게요">찍을게요</button><button type="button" data-v="찍을 거예요">찍을 거예요</button></div>
+      <div class="fb" hidden><span class="res"></span>頼まれて「撮りますね」と引き受けているので <span class="ko k1">ㄹ게요</span> です。</div>
+    </div>
+
+    <div class="q" data-answer="뺄 거예요">
+      <p class="qtext"><span class="scene">「どうしてジムに入ったの?」と聞かれて、今年の目標を話します。</span>Q6. <span class="ko">올해는 꼭 5킬로 ( ? ).</span></p>
+      <div class="opts"><button type="button" data-v="뺄게요">뺄게요</button><button type="button" data-v="뺄 거예요">뺄 거예요</button></div>
+      <div class="fb" hidden><span class="res"></span>相手に約束しているのではなく、自分の決心を話しているので <span class="ko k2">ㄹ 거예요</span> です(<span class="ko">빼다</span>:体重を落とす)。</div>
+    </div>
+
+    <p class="score" aria-live="polite"></p>
+    <p style="text-align:right"><button class="small" type="button" id="reset">もう一度解く</button></p>
+  </section>
+
+</main>
+
+<footer>似ている表現の使い分け 01-特別編|韓国語初級</footer>
+
+<script>
+  // 練習問題
+  const qs = document.querySelectorAll('.q');
+  const scoreEl = document.querySelector('.score');
+  function updateScore() {
+    const done = document.querySelectorAll('.q.done').length;
+    const right = document.querySelectorAll('.q.correct').length;
+    scoreEl.textContent = done ? `正解 ${right} / ${qs.length}` : '';
+  }
+  qs.forEach(q => {
+    const ans = q.dataset.answer;
+    q.querySelectorAll('.opts button').forEach(b => {
+      b.addEventListener('click', () => {
+        if (q.classList.contains('done')) return;
+        q.classList.add('done');
+        const ok = b.dataset.v === ans;
+        if (ok) q.classList.add('correct');
+        q.querySelectorAll('.opts button').forEach(x => {
+          if (x.dataset.v === ans) x.classList.add('right');
+        });
+        if (!ok) b.classList.add('wrong');
+        const fb = q.querySelector('.fb');
+        fb.querySelector('.res').textContent = ok ? '○ 正解です!' : `もう一歩!正解は「${ans}」です。`;
+        fb.hidden = false;
+        updateScore();
+      });
+    });
+  });
+  document.getElementById('reset').addEventListener('click', () => {
+    qs.forEach(q => {
+      q.classList.remove('done', 'correct');
+      q.querySelectorAll('.opts button').forEach(x => x.classList.remove('right', 'wrong'));
+      q.querySelector('.fb').hidden = true;
+    });
+    updateScore();
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // 会話の訳の表示・非表示
+  document.querySelectorAll('.dialog .small').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const d = btn.closest('.dialog');
+      d.classList.toggle('hide-tr');
+      btn.textContent = d.classList.contains('hide-tr') ? '訳を表示' : '訳を隠す';
+    });
+  });
+</script>
+</body>
+</html>
